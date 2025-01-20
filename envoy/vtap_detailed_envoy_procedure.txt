@@ -1,0 +1,225 @@
+
+curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
+
+ -X POST -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/trace
+
+----------------------------------news
+   
+1) docker run -d -t --net host --name cfx_vtap --privileged ffa1fcac4541 bash
+notes:
+docker images
+REPOSITORY                               TAG         IMAGE ID      CREATED        SIZE
+docker.io/envoyproxy/envoy-build-ubuntu  <none>      ffa1fcac4541  10 months ago  5.76 GB
+
+ROOT user in docker:
+2) docker exec -it -u0 --privileged cfx_vtap bash
+	apt-get update
+	apt-get install iputils-ping -y
+	apt-get install vim -y
+	apt-get install  zstd -y
+	
+	groupadd --gid 1200 -f envoygroup
+	useradd -o --uid 1200 --gid 1200 --no-create-home --home-dir /build envoybuild
+	usermod -a -G pcap envoybuild
+	mkdir build;	chown envoybuild:envoygroup /build;	mkdir /source;	chown envoybuild:envoygroup /source
+	
+envoybuild User:
+3) docker exec -it -u envoybuild  cfx_vtap bash
+	cd source
+	git clone  https://github.com/envoyproxy/envoy.git /source
+	git clone  https://github.com/coolg92003/envoy.git /source 
+	git status
+	git config --global user.name "fchen7";	git config --global user.email "cliff.chen@nokia-sbell.com"	
+	git config --get-all --global user.name
+	git config --get-all --global user.email	
+	export CLANG_FORMAT=/opt/llvm/bin/clang-format
+	./support/bootstrap
+	./ci/do_ci.sh release.server_only
+	Notes: if you want to build contrib static exe file, then apply below diff
+-------------------
+	contrib/exe/BUILD
+index bde5a0a..9e3c759 100644
+--- a/contrib/exe/BUILD
++++ b/contrib/exe/BUILD
+@@ -35,6 +35,17 @@ envoy_cc_binary(
+     stamped = True,
+     visibility = ["//visibility:public"],
+     deps = ["//source/exe:envoy_main_entry_lib"] + SELECTED_CONTRIB_EXTENSIONS,
++    linkopts = [
++        "-pthread",
++        "-lrt",
++        "-ldl",
++        "-static",
++        "-lc",
++        "-lrt",
++        "-lpthread",
++        "-Wl,-z,relro,-z,now,-z,muldefs",
++        "-Wl,--hash-style=gnu",
++    ],
+ )
+ ----------------------------
+4) Release file is under
+   ls -l /build/.cache/envoy-bazel/envoy/x64/bin
+	cd /tmp/test
+	tar --use-compress-program=unzstd -xvf /build/.cache/envoy-bazel/envoy/x64/bin/release.tar.zst
+	chmod 755 ./dbg/envoy
+	./dbg/envoy --version
+	for dev build:
+		./ci/do_ci.sh dev
+	~/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy
+		./ci/do_ci.sh dev.contrib
+	~/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy
+	cp /build/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy .
+	
+	./envoy -l trace -c ./TapUdpenvoyStaticCustomHttpTrans.yaml --concurrency 1 --log-path ./envoy.log&
+	
+5) Run
+	docker cp ./TapUdpenvoyStaticTransport.yaml  cfx_vtap:/tmp/test/TapUdpenvoyStaticTransport.yaml
+	docker cp /home/cfx/test/tlss2/CA.cert  cfx_vtap:/tmp/test/CA.cert
+	docker exec -it -u0 --privileged cfx_vtap bash	
+	chown envoybuild:envoygroup /tmp/test/TapUdpenvoyStaticTransport.yaml
+	chown envoybuild:envoygroup /tmp/test/CA.cert
+./dbg/envoy -l trace -c ./TapUdpenvoyStaticTransport.yaml --concurrency 1 --log-path ./envoy.log&
+> ./envoy.log ; ./dbg/envoy -l debug -c ./TapUdpenvoyStaticTransportHTTP2.yaml --concurrency 2 --log-path ./envoy.log&
+curl -vvvS -k -x '' --request GET --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff2" --header "x-call-trace-id:1" --data '{"name":"cliff_test_reqest_body"}' http://127.0.0.1:8022/ses
+
+	echo SFRUUC8xLjEgMjAwIE9LDQo= | base64 -d
+ 									
+Try to contribute the code	:
+Notes:
+	for Adding an new extension, https://github.com/envoyproxy/envoy/blob/main/api/STYLE.md#adding-an-extension-configuration-to-the-api
+	change file api/BUILD and source/extensions/extensions_build_config.bzl, tools/extensions/extensions_schema.yaml
+	run ./tools/proto_format/proto_format.sh fix
+	Notes: becareof about file under source/api/envoy/extensions/tap_sinks/udp_sink/v3
+	once there is any error, it will remove files, like BUILD and udp_sink.proto
+	
+6)
+6.1) Create a git hub user
+6.2) go to this link (https://github.com/envoyproxy/envoy) to fork envoy
+   you can see an "Fork" on right up and click on it
+   wait the for ....
+   Notes:
+   if you want to remove this repo, then go to https://github.com/coolg92003/envoy/settings
+   scroll down click "Delete this repository"
+6.3) do 2) and 3) with an new container name, like cfx_vtap_ofc
+6.4) Change the code
+    1) check proto format and error
+	  ./ci/do_ci.sh check_proto_format
+	  ./ci/do_ci.sh check_and_fix_proto_format
+	2) check format
+	Run format check and fix any errors
+	  ./ci/do_ci.sh format
+	  ./ci/do_ci.sh format-api
+
+	3) Build the docs
+	  ./ci/do_ci.sh docs
+	4) Add UT and build the coverage
+	  ./ci/do_ci.sh coverage 
+	 Notes: file is under $ENVOY_DOCKER_BUILD_DIR/envoy/generated/coverage/coverage.html
+	        Leg envoy do this, very wast disk
+	5) build test code:
+	  Write the UT
+	  1) single UT
+	    https://google.github.io/googletest/gmock_faq.html
+	  2) Integrate UT
+	  
+	  3) build dev and test dir:target
+	   ./ci/do_ci.sh  dev  //test/extensions/common/tap:tap_config_base_test
+	   !!! Notes: Change do_ci.sh and remove build, only test.
+-        echo "Building..."
+-        bazel_envoy_binary_build fastbuild
++        echo "CFX skip Building..."
++        #bazel_envoy_binary_build fastbuild
+       Testing log:
+/build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/test/extensions/common/tap/tap_config_base_test/test.log
+/build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/test/extensions/filters/http/tap/tap_filter_integration_test/test.log
+	   4) Build contrib and test
+	   ./ci/do_ci.sh  dev.contrib
+	   /build/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy
+	   ./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_test
+/build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/contrib/tap_sinks/udp_sink/test/udp_sink_test/test.log
+       cd /source/contrib/tap_sinks/udp_sink/test
+	   cd /source
+	   ./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_interation_test
+	  Only test:
+	   ./ci/do_ci.sh release.test_only 
+	bazel:https://github.com/envoyproxy/envoy/blob/main/bazel/README.md
+		bazel test //test/common/http:async_client_impl_test
+		bazel test --test_output=streamed //test/common/http:async_client_impl_test --test_arg="-l trace"
+	
+6.5) commit
+git add 
+git commit -m "Add UDP sink for tap"
+git push --no-verify
+Username for 'https://github.com': coolg92003
+Password for 'https://coolg92003@github.com': here put token
+
+***new*** after continues changes
+1) rebase firstly
+	git pull --rebase 
+  or
+	branch=$(git status|head -1|cut -f3 -d\ )
+	git checkout main
+	git pull
+	git checkout "$branch"
+	git merge main
+  or
+  	git  commit -m "Add caught time stamp for http tap filter" -s 
+	git commit --amend -s
+	if time is long, it need rebase code from envoy main, then
+		git config --list
+		1) add an upstream
+			git remote add upstream https://github.com/envoyproxy/envoy.git
+			Notes: this command is only need one time
+		2) fetch it
+			git fetch upstream
+		3) rebase uptream to your main
+			git rebase upstream/main
+			then 
+				git commit --amend  --no-edit
+				git push --no-verify
+			    git push --no-verify -f
+		First PR:
+			https://github.com/envoyproxy/envoy/pull/28472
+			An good example for extension: https://github.com/envoyproxy/envoy/pull/30079
+		wrong changes:
+			git reflog
+			git reset 68d736f385
+			Notes: id 68d736f385 is until which not included
+	check on github by
+		https://github.com/coolg92003/envoy
+		click on commits under "Code"
+		find your commit words or username
+	
+2) change the files
+3) add
+   git add 
+4) commit
+  git commit
+5) push
+git push --no-verify
+
+6) try  /retest  to verify code again!
+-----
+push error
+git pull --rebase
+git add *
+git rebase --continue
+git commit --amend  --no-edit
+git push --no-verify
+
+git diff HEAD^ >conribCodebk.diff12242025
+Build code, and write UT
+
+6.6) PR
+Create PR
+    go to github https://github.com/envoyproxy/envoy
+	click on Pull requtest
+	click on new pull request
+	click on "compare across forks
+	click on "head repository:xxx" (the right one after arrow <-)select your fork repo by username(coolg92003/envoy)
+	Create PR
+	new PR:https://github.com/envoyproxy/envoy/pull/37172
+	
+
+
