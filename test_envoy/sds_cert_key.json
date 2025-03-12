@@ -1,0 +1,17 @@
+{
+  "version_info": "0",
+  "resources": [
+    {
+      "@type": "type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.Secret",
+      "name": "sds_cert_key",
+      "tls_certificate":{
+        "certificate_chain":{
+          "filename":"/tmp/Server.cert"
+        },
+        "private_key":{
+          "filename":"/tmp/Server.key"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version_info": "0",
+  "resources": [
+    {
+      "@type": "type.googleapis.com/envoy.config.route.v3.RouteConfiguration",
+      "name": "rds_route",
+      "virtual_hosts": [
+        {
+          "name": "default_service",
+          "domains": [
+            "*"
+          ],
+          "routes": [
+            {
+              "match": {
+                "prefix": "/"
+              },
+              "route": {
+                "cluster": "service1"
+              },
+              "request_headers_to_remove": [
+                "x-pcfpa-high-priority"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

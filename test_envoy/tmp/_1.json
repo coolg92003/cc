@@ -1,0 +1,95 @@
+{
+ "socket_buffered_trace": {
+  "trace_id": "1",
+  "connection": {
+   "local_address": {
+    "socket_address": {
+     "protocol": "TCP",
+     "address": "127.0.0.1",
+     "port_value": 58666,
+     "resolver_name": "",
+     "ipv4_compat": false
+    }
+   },
+   "remote_address": {
+    "socket_address": {
+     "protocol": "TCP",
+     "address": "127.0.0.1",
+     "port_value": 9443,
+     "resolver_name": "",
+     "ipv4_compat": false
+    }
+   }
+  },
+  "events": [
+   {
+    "timestamp": "2024-10-22T07:35:08.206338908Z",
+    "write": {
+     "data": {
+      "as_bytes": "R0VUIC9zZXMgSFRUUC8xLjENCmhvc3Q6IDEyNy4wLjAuMTo4MDIyDQp1c2VyLWFnZW50OiBjdXJsLzcuNjEuMQ0KYWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uDQphZGQtYnktY2xpZmY6IGNvbnRlbnQtYWRkZWQtYnktY2xpZmYyDQp4LWNhbGwtdHJhY2UtaWQ6IDENCngtZm9yd2FyZGVkLXByb3RvOiBodHRwDQp4LXJlcXVlc3QtaWQ6IDEzMGY1YWVhLTBkNTItNGZkMC04ZTRiLTc1NWZlYTUxYWExOQ0KeC1lbnZveS1leHBlY3RlZC1ycS10aW1lb3V0LW1zOiAxNTAwMA0KDQo=",
+      "truncated": false
+     },
+     "end_stream": false
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:35:08.230950339Z",
+    "read": {
+     "data": {
+      "as_bytes": "SFRUUC8xLjEgMjAwIE9LDQo=",
+      "truncated": false
+     }
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:35:08.267970847Z",
+    "read": {
+     "data": {
+      "as_bytes": "Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uDQpDb250ZW50LUxlbmd0aDogMzkNClNlcnZlcjogV2Vya3pldWcvMi4wLjMgUHl0aG9uLzMuNi44DQpEYXRlOiBUdWUsIDIyIE9jdCAyMDI0IDA3OjM1OjA4IEdNVA0KDQp7InNlcnZlciI6IlJldHVybiB0ZXN0IHJlc3BvbnNlIGJvZHkifQo=",
+      "truncated": false
+     }
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:35:48.391773611Z",
+    "write": {
+     "data": {
+      "as_bytes": "R0VUIC9zZXMgSFRUUC8xLjENCmhvc3Q6IDEyNy4wLjAuMTo4MDIyDQp1c2VyLWFnZW50OiBjdXJsLzcuNjEuMQ0KYWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uDQphZGQtYnktY2xpZmY6IGNvbnRlbnQtYWRkZWQtYnktY2xpZmYyDQp4LWNhbGwtdHJhY2UtaWQ6IDENCngtZm9yd2FyZGVkLXByb3RvOiBodHRwDQp4LXJlcXVlc3QtaWQ6IDg5NTBkMDRlLTgzYzctNDE5NS04YWYyLWVhZTRhZWZjMTdlNw0KeC1lbnZveS1leHBlY3RlZC1ycS10aW1lb3V0LW1zOiAxNTAwMA0KDQo=",
+      "truncated": false
+     },
+     "end_stream": false
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:35:48.396376944Z",
+    "read": {
+     "data": {
+      "as_bytes": "SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24NCkNvbnRlbnQtTGVuZ3RoOiAzOQ0KU2VydmVyOiBXZXJremV1Zy8yLjAuMyBQeXRob24vMy42LjgNCkRhdGU6IFR1ZSwgMjIgT2N0IDIwMjQgMDc6MzU6NDggR01UDQoNCnsic2VydmVyIjoiUmV0dXJuIHRlc3QgcmVzcG9uc2UgYm9keSJ9Cg==",
+      "truncated": false
+     }
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:36:11.637907708Z",
+    "write": {
+     "data": {
+      "as_bytes": "R0VUIC9zZXMgSFRUUC8xLjENCmhvc3Q6IDEyNy4wLjAuMTo4MDIyDQp1c2VyLWFnZW50OiBjdXJsLzcuNjEuMQ0KYWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uDQphZGQtYnktY2xpZmY6IGNvbnRlbnQtYWRkZWQtYnktY2xpZmYyDQp4LWNhbGwtdHJhY2UtaWQ6IDENCngtZm9yd2FyZGVkLXByb3RvOiBodHRwDQp4LXJlcXVlc3QtaWQ6IDUyZmIxZTFjLTcwOTAtNDI2ZC1hODdlLTc3YmZkZGIzZWRlMA0KeC1lbnZveS1leHBlY3RlZC1ycS10aW1lb3V0LW1zOiAxNTAwMA0KDQo=",
+      "truncated": false
+     },
+     "end_stream": false
+    }
+   },
+   {
+    "timestamp": "2024-10-22T07:36:11.641020239Z",
+    "read": {
+     "data": {
+      "as_bytes": "SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24NCkNvbnRlbnQtTGVuZ3RoOiAzOQ0KU2VydmVyOiBXZXJremV1Zy8yLjAuMyBQeXRob24vMy42LjgNCkRhdGU6IFR1ZSwgMjIgT2N0IDIwMjQgMDc6MzY6MTEgR01UDQoNCnsic2VydmVyIjoiUmV0dXJuIHRlc3QgcmVzcG9uc2UgYm9keSJ9Cg==",
+      "truncated": false
+     }
+    }
+   }
+  ],
+  "read_truncated": false,
+  "write_truncated": false
+ }
+}

@@ -1,0 +1,921 @@
+diff --git a/CODEOWNERS b/CODEOWNERS
+index 3a2cf2d351..42cb1dbf44 100644
+--- a/CODEOWNERS
++++ b/CODEOWNERS
+@@ -259,10 +259,9 @@ extensions/filters/http/oauth2 @derekargueta @mattklein123
+ /*/extensions/filters/http/rbac @yangminzhu @yanavlasov
+ /*/extensions/filters/common/rbac @yangminzhu @yanavlasov
+ # tap
+-/*/extensions/filters/http/tap @mattklein123 @coolg92003 @xu1zhou
+-/*/extensions/common/tap @mattklein123 @coolg92003 @xu1zhou
+-/*/extensions/transport_sockets/tap @mattklein123 @coolg92003 @xu1zhou
+-/*/extensions/tap_sinks/udp_sink @wbpcode @coolg92003 @yiyibaoguo
++/*/extensions/filters/http/tap @mattklein123 @xu1zhou
++/*/extensions/common/tap @mattklein123 @xu1zhou
++/*/extensions/transport_sockets/tap @mattklein123 @xu1zhou
+ # local rate limit
+ /*/extensions/filters/network/local_ratelimit @mattklein123 @wbpcode
+ /*/extensions/filters/listener/local_ratelimit @mattklein123 @JuniorHsu
+@@ -413,3 +412,4 @@ extensions/filters/http/oauth2 @derekargueta @mattklein123
+ /contrib/dlb @mattklein123 @daixiang0
+ /contrib/qat/ @giantcroc @soulxu
+ /contrib/generic_proxy/ @wbpcode @UNOWNED
++/contrib/tap_sinks/ @coolg92003 @yiyibaoguo
+diff --git a/api/BUILD b/api/BUILD
+index adcf6f51e2..c0c330854e 100644
+--- a/api/BUILD
++++ b/api/BUILD
+@@ -97,6 +97,7 @@ proto_library(
+         "//contrib/envoy/extensions/private_key_providers/qat/v3alpha:pkg",
+         "//contrib/envoy/extensions/regex_engines/hyperscan/v3alpha:pkg",
+         "//contrib/envoy/extensions/router/cluster_specifier/golang/v3alpha:pkg",
++        "//contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha:pkg",
+         "//contrib/envoy/extensions/vcl/v3alpha:pkg",
+         "//envoy/admin/v3:pkg",
+         "//envoy/config/accesslog/v3:pkg",
+@@ -331,7 +332,6 @@ proto_library(
+         "//envoy/extensions/stat_sinks/open_telemetry/v3:pkg",
+         "//envoy/extensions/stat_sinks/wasm/v3:pkg",
+         "//envoy/extensions/string_matcher/lua/v3:pkg",
+-        "//envoy/extensions/tap_sinks/udp_sink/v3:pkg",
+         "//envoy/extensions/tracers/opentelemetry/resource_detectors/v3:pkg",
+         "//envoy/extensions/tracers/opentelemetry/samplers/v3:pkg",
+         "//envoy/extensions/transport_sockets/alts/v3:pkg",
+diff --git a/api/envoy/extensions/tap_sinks/udp_sink/v3/BUILD b/api/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/BUILD
+similarity index 100%
+rename from api/envoy/extensions/tap_sinks/udp_sink/v3/BUILD
+rename to api/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/BUILD
+diff --git a/api/envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.proto b/api/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.proto
+similarity index 70%
+rename from api/envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.proto
+rename to api/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.proto
+index 4ffd734350..d98f6b93f8 100644
+--- a/api/envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.proto
++++ b/api/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.proto
+@@ -1,15 +1,15 @@
+ syntax = "proto3";
+ 
+-package envoy.extensions.tap_sinks.udp_sink.v3;
++package envoy.extensions.tap_sinks.udp_sink.v3alpha;
+ 
+ import "envoy/config/core/v3/address.proto";
+ 
+ import "udpa/annotations/status.proto";
+ 
+-option java_package = "io.envoyproxy.envoy.extensions.tap_sinks.udp_sink.v3";
++option java_package = "io.envoyproxy.envoy.extensions.tap_sinks.udp_sink.v3alpha";
+ option java_outer_classname = "UdpSinkProto";
+ option java_multiple_files = true;
+-option go_package = "github.com/envoyproxy/go-control-plane/envoy/extensions/tap_sinks/udp_sink/v3;udp_sinkv3";
++option go_package = "github.com/envoyproxy/go-control-plane/contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha";
+ option (udpa.annotations.file_status).package_version_status = ACTIVE;
+ 
+ // [#protodoc-title: Udp sink configuration]
+@@ -17,6 +17,6 @@ option (udpa.annotations.file_status).package_version_status = ACTIVE;
+ 
+ // Udp sink configuration.
+ message UdpSink {
+-  //   Configure UDP Address
++  // Configure UDP Address.
+   config.core.v3.SocketAddress udp_address = 1;
+ }
+diff --git a/api/versioning/BUILD b/api/versioning/BUILD
+index 330bc7428e..778ae64743 100644
+--- a/api/versioning/BUILD
++++ b/api/versioning/BUILD
+@@ -35,6 +35,7 @@ proto_library(
+         "//contrib/envoy/extensions/private_key_providers/qat/v3alpha:pkg",
+         "//contrib/envoy/extensions/regex_engines/hyperscan/v3alpha:pkg",
+         "//contrib/envoy/extensions/router/cluster_specifier/golang/v3alpha:pkg",
++        "//contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha:pkg",
+         "//contrib/envoy/extensions/vcl/v3alpha:pkg",
+         "//envoy/admin/v3:pkg",
+         "//envoy/config/accesslog/v3:pkg",
+@@ -269,7 +270,6 @@ proto_library(
+         "//envoy/extensions/stat_sinks/open_telemetry/v3:pkg",
+         "//envoy/extensions/stat_sinks/wasm/v3:pkg",
+         "//envoy/extensions/string_matcher/lua/v3:pkg",
+-        "//envoy/extensions/tap_sinks/udp_sink/v3:pkg",
+         "//envoy/extensions/tracers/opentelemetry/resource_detectors/v3:pkg",
+         "//envoy/extensions/tracers/opentelemetry/samplers/v3:pkg",
+         "//envoy/extensions/transport_sockets/alts/v3:pkg",
+diff --git a/contrib/contrib_build_config.bzl b/contrib/contrib_build_config.bzl
+index 905788c00e..7324db2920 100644
+--- a/contrib/contrib_build_config.bzl
++++ b/contrib/contrib_build_config.bzl
+@@ -36,6 +36,12 @@ CONTRIB_EXTENSIONS = {
+     "envoy.filters.network.sip_proxy":                          "//contrib/sip_proxy/filters/network/source:config",
+     "envoy.filters.sip.router":                                 "//contrib/sip_proxy/filters/network/source/router:config",
+ 
++    #
++    # Tap sinks
++    #
++
++    "envoy.tap_sinks.udp_sink":                          "//contrib/tap_sinks/udp_sink/source:config",
++
+     #
+     # Private key providers
+     #
+diff --git a/contrib/extensions_metadata.yaml b/contrib/extensions_metadata.yaml
+index 4b704af159..b6400c7f2d 100644
+--- a/contrib/extensions_metadata.yaml
++++ b/contrib/extensions_metadata.yaml
+@@ -113,6 +113,15 @@ envoy.regex_engines.hyperscan:
+   - envoy.regex_engines
+   security_posture: requires_trusted_downstream_and_upstream
+   status: alpha
++envoy.tap_sinks.udp_sink:
++  categories:
++  - envoy.filters.http
++  - envoy.transport_sockets.downstream
++  - envoy.transport_sockets.upstream
++  security_posture: requires_trusted_downstream_and_upstream
++  status: alpha
++  type_urls:
++  - envoy.extensions.tap_sinks.udp_sink.v3alpha.UdpSink
+ envoy.xds_delegates.kv_store:
+   categories:
+   - envoy.xds_delegates
+diff --git a/source/extensions/tap_sinks/udp_sink/BUILD b/contrib/tap_sinks/udp_sink/source/BUILD
+similarity index 56%
+rename from source/extensions/tap_sinks/udp_sink/BUILD
+rename to contrib/tap_sinks/udp_sink/source/BUILD
+index 6ede74ed4e..6046d99231 100644
+--- a/source/extensions/tap_sinks/udp_sink/BUILD
++++ b/contrib/tap_sinks/udp_sink/source/BUILD
+@@ -1,16 +1,13 @@
+ load(
+     "//bazel:envoy_build_system.bzl",
+-    "envoy_cc_extension",
++    "envoy_cc_contrib_extension",
+     "envoy_cc_library",
+-    "envoy_extension_package",
+-    "envoy_select_admin_functionality",
++    "envoy_contrib_package",
+ )
+ 
+ licenses(["notice"])  # Apache 2
+ 
+-# UDP sink extension
+-
+-envoy_extension_package()
++envoy_contrib_package()
+ 
+ envoy_cc_library(
+     name = "udp_sink_impl",
+@@ -21,24 +18,20 @@ envoy_cc_library(
+         "//source/common/network:udp_packet_writer_handler_lib",
+         "//source/common/network:utility_lib",
+         "//source/extensions/common/tap:tap_interface",
++        "@envoy_api//contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha:pkg_cc_proto",
+         "@envoy_api//envoy/config/tap/v3:pkg_cc_proto",
+-        "@envoy_api//envoy/extensions/tap_sinks/udp_sink/v3:pkg_cc_proto",
+     ],
+ )
+ 
+-envoy_cc_extension(
++envoy_cc_contrib_extension(
+     name = "config",
+-    srcs = envoy_select_admin_functionality(["config.cc"]),
+-    hdrs = envoy_select_admin_functionality(["config.h"]),
+-    extra_visibility = [
+-        # test needs refactor
+-        "//test/common/tls:__subpackages__",
+-    ],
++    srcs = ["config.cc"],
++    hdrs = ["config.h"],
+     deps = [
+         ":udp_sink_impl",
+         "//envoy/registry",
+         "//source/common/network:utility_lib",
+         "//source/extensions/common/tap:tap_interface",
+-        "@envoy_api//envoy/extensions/tap_sinks/udp_sink/v3:pkg_cc_proto",
++        "@envoy_api//contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha:pkg_cc_proto",
+     ],
+ )
+diff --git a/source/extensions/tap_sinks/udp_sink/config.cc b/contrib/tap_sinks/udp_sink/source/config.cc
+similarity index 74%
+rename from source/extensions/tap_sinks/udp_sink/config.cc
+rename to contrib/tap_sinks/udp_sink/source/config.cc
+index a51a8f9817..b2b9d27c6f 100644
+--- a/source/extensions/tap_sinks/udp_sink/config.cc
++++ b/contrib/tap_sinks/udp_sink/source/config.cc
+@@ -1,10 +1,9 @@
+-#include "source/extensions/tap_sinks/udp_sink/config.h"
++#include "contrib/tap_sinks/udp_sink/source/config.h"
+ 
+-#include "envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.pb.validate.h"
+ #include "envoy/registry/registry.h"
+ #include "envoy/server/transport_socket_config.h"
+ 
+-#include "source/extensions/tap_sinks/udp_sink/udp_sink_impl.h"
++#include "contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.pb.validate.h"
+ 
+ namespace Envoy {
+ namespace Extensions {
+@@ -16,7 +15,8 @@ TapCommon::SinkPtr UdpTapSinkFactory::createTransportSinkPtr(
+     Server::Configuration::TransportSocketFactoryContext& tsf_context) {
+   ENVOY_LOG_MISC(trace, "{}: Create UDP sink in transport context", __func__);
+   return std::make_unique<UdpTapSink>(
+-      MessageUtil::downcastAndValidate<const envoy::extensions::tap_sinks::udp_sink::v3::UdpSink&>(
++      MessageUtil::downcastAndValidate<
++          const envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink&>(
+           config, tsf_context.messageValidationVisitor()));
+ }
+ 
+@@ -25,7 +25,8 @@ UdpTapSinkFactory::createHttpSinkPtr(const Protobuf::Message& config,
+                                      Server::Configuration::FactoryContext& http_context) {
+   ENVOY_LOG_MISC(trace, "{}: Create UDP sink in http context", __func__);
+   return std::make_unique<UdpTapSink>(
+-      MessageUtil::downcastAndValidate<const envoy::extensions::tap_sinks::udp_sink::v3::UdpSink&>(
++      MessageUtil::downcastAndValidate<
++          const envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink&>(
+           config, http_context.serverFactoryContext()
+                       .messageValidationContext()
+                       .staticValidationVisitor()));
+diff --git a/source/extensions/tap_sinks/udp_sink/config.h b/contrib/tap_sinks/udp_sink/source/config.h
+similarity index 92%
+rename from source/extensions/tap_sinks/udp_sink/config.h
+rename to contrib/tap_sinks/udp_sink/source/config.h
+index 7de70b6d3b..00cb86fddc 100644
+--- a/source/extensions/tap_sinks/udp_sink/config.h
++++ b/contrib/tap_sinks/udp_sink/source/config.h
+@@ -1,9 +1,9 @@
+ #pragma once
+ 
+-#include "envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.pb.h"
+-
+ #include "source/extensions/common/tap/tap.h"
+ 
++#include "contrib/tap_sinks/udp_sink/source/udp_sink_impl.h"
++
+ namespace Envoy {
+ namespace Extensions {
+ namespace TapSinks {
+@@ -17,7 +17,7 @@ public:
+   std::string category() const override { return "envoy.tap.sinks.udp"; }
+   std::string name() const override { return "envoy.tap.sinks.udp"; }
+   ProtobufTypes::MessagePtr createEmptyConfigProto() override {
+-    return std::make_unique<envoy::extensions::tap_sinks::udp_sink::v3::UdpSink>();
++    return std::make_unique<envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink>();
+   }
+   TapCommon::SinkPtr
+   createHttpSinkPtr(const Protobuf::Message& config,
+diff --git a/source/extensions/tap_sinks/udp_sink/udp_sink_impl.cc b/contrib/tap_sinks/udp_sink/source/udp_sink_impl.cc
+similarity index 85%
+rename from source/extensions/tap_sinks/udp_sink/udp_sink_impl.cc
+rename to contrib/tap_sinks/udp_sink/source/udp_sink_impl.cc
+index 056e6bfbbc..2c36fe6926 100644
+--- a/source/extensions/tap_sinks/udp_sink/udp_sink_impl.cc
++++ b/contrib/tap_sinks/udp_sink/source/udp_sink_impl.cc
+@@ -1,16 +1,16 @@
+-#include "source/extensions/tap_sinks/udp_sink/udp_sink_impl.h"
+-
+-#include "envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.pb.validate.h"
++#include "contrib/tap_sinks/udp_sink/source/udp_sink_impl.h"
+ 
+ #include "source/common/common/assert.h"
+ #include "source/common/network/utility.h"
+ 
++#include "contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.pb.validate.h"
++
+ namespace Envoy {
+ namespace Extensions {
+ namespace TapSinks {
+ namespace UDP {
+ 
+-UdpTapSink::UdpTapSink(const envoy::extensions::tap_sinks::udp_sink::v3::UdpSink& config)
++UdpTapSink::UdpTapSink(const envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink& config)
+     : config_(config) {
+   if (config_.udp_address().protocol() != envoy::config::core::v3::SocketAddress::UDP) {
+     ENVOY_LOG_MISC(warn, "{}: Only suport UDP and invalid protocol", __func__);
+@@ -61,11 +61,12 @@ void UdpTapSink::UdpTapSinkHandle::submitTrace(TapCommon::TraceWrapperPtr&& trac
+       break;
+     }
+     std::string json_string = MessageUtil::getJsonStringFromMessageOrError(*trace, true, true);
+-    Buffer::OwnedImpl udp_data(json_string);
++    Buffer::OwnedImpl udp_data(std::move(json_string));
+     // Construct Buffer instance.
+-    Buffer::Instance& buffer = udp_data;
++    // Buffer::Instance& buffer = udp_data;
+     Api::IoCallUint64Result write_result =
+-        parent_.udp_packet_writer_->writePacket(buffer, nullptr, *parent_.udp_server_address_);
++        // parent_.udp_packet_writer_->writePacket(buffer, nullptr, *parent_.udp_server_address_);
++        parent_.udp_packet_writer_->writePacket(udp_data, nullptr, *parent_.udp_server_address_);
+     if (!write_result.ok()) {
+       ENVOY_LOG_MISC(debug, "{}: Failed to send UDP packet!", __func__);
+     }
+diff --git a/source/extensions/tap_sinks/udp_sink/udp_sink_impl.h b/contrib/tap_sinks/udp_sink/source/udp_sink_impl.h
+similarity index 83%
+rename from source/extensions/tap_sinks/udp_sink/udp_sink_impl.h
+rename to contrib/tap_sinks/udp_sink/source/udp_sink_impl.h
+index 8c72f30d90..0c38ffdf79 100644
+--- a/source/extensions/tap_sinks/udp_sink/udp_sink_impl.h
++++ b/contrib/tap_sinks/udp_sink/source/udp_sink_impl.h
+@@ -1,7 +1,6 @@
+ #pragma once
+ 
+ #include "envoy/config/tap/v3/common.pb.h"
+-#include "envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.pb.h"
+ 
+ #include "source/common/network/socket_impl.h"
+ #include "source/common/network/socket_interface.h"
+@@ -9,6 +8,8 @@
+ #include "source/common/network/utility.h"
+ #include "source/extensions/common/tap/tap.h"
+ 
++#include "contrib/envoy/extensions/tap_sinks/udp_sink/v3alpha/udp_sink.pb.h"
++
+ namespace Envoy {
+ namespace Extensions {
+ namespace TapSinks {
+@@ -16,10 +17,9 @@ namespace UDP {
+ 
+ namespace TapCommon = Extensions::Common::Tap;
+ 
+-// class UdpTapSink : public ExtCommonTap::Sink {
+ class UdpTapSink : public TapCommon::Sink {
+ public:
+-  UdpTapSink(const envoy::extensions::tap_sinks::udp_sink::v3::UdpSink& config);
++  UdpTapSink(const envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink& config);
+   // below one is only for UT because
+   // it can't control return value of writePacket if not add below function.
+   UdpTapSink(Network::UdpPacketWriterPtr&& utUdpPacketWriter)
+@@ -51,12 +51,12 @@ private:
+     const uint64_t trace_id_;
+   };
+ 
+-  const envoy::extensions::tap_sinks::udp_sink::v3::UdpSink config_;
+-  // Store the configured UDP address and port
++  const envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink config_;
++  // Store the configured UDP address and port.
+   Network::Address::InstanceConstSharedPtr udp_server_address_ = nullptr;
+-  // UDP client socket
++  // UDP client socket.
+   Network::SocketPtr udp_socket_ = nullptr;
+-  // UDP client writer created with client socket
++  // UDP client writer created with client socket.
+   Network::UdpPacketWriterPtr udp_packet_writer_ = nullptr;
+ };
+ 
+diff --git a/contrib/tap_sinks/udp_sink/test/BUILD b/contrib/tap_sinks/udp_sink/test/BUILD
+new file mode 100644
+index 0000000000..395f1fa7c5
+--- /dev/null
++++ b/contrib/tap_sinks/udp_sink/test/BUILD
+@@ -0,0 +1,40 @@
++load(
++    "//bazel:envoy_build_system.bzl",
++    "envoy_cc_test",
++    "envoy_contrib_package",
++)
++
++licenses(["notice"])  # Apache 2
++
++envoy_contrib_package()
++
++envoy_cc_test(
++    name = "udp_sink_test",
++    srcs = ["udp_sink_test.cc"],
++    deps = [
++        "//contrib/tap_sinks/udp_sink/source:config",
++        "//source/common/network:udp_packet_writer_handler_lib",
++        "//source/common/network:utility_lib",
++        "//test/mocks/network:network_mocks",
++        "@envoy_api//envoy/config/core/v3:pkg_cc_proto",
++        "@envoy_api//envoy/config/tap/v3:pkg_cc_proto",
++        "@envoy_api//envoy/data/tap/v3:pkg_cc_proto",
++    ],
++)
++
++envoy_cc_test(
++    name = "udp_sink_config_test",
++    srcs = ["udp_sink_config_test.cc"],
++    deps = [
++        "//contrib/tap_sinks/udp_sink/source:config",
++        "//source/common/network:utility_lib",
++        "//source/extensions/common/tap:tap_config_base",
++        "//test/mocks/network:network_mocks",
++        "//test/mocks/server:server_mocks",
++        "//test/test_common:logging_lib",
++        "//test/test_common:registry_lib",
++        "@envoy_api//envoy/config/core/v3:pkg_cc_proto",
++        "@envoy_api//envoy/config/tap/v3:pkg_cc_proto",
++        "@envoy_api//envoy/data/tap/v3:pkg_cc_proto",
++    ],
++)
+diff --git a/contrib/tap_sinks/udp_sink/test/udp_sink_config_test.cc b/contrib/tap_sinks/udp_sink/test/udp_sink_config_test.cc
+new file mode 100644
+index 0000000000..4e5072e7a0
+--- /dev/null
++++ b/contrib/tap_sinks/udp_sink/test/udp_sink_config_test.cc
+@@ -0,0 +1,94 @@
++#include <memory>
++
++#include "envoy/config/core/v3/address.pb.h"
++#include "envoy/config/tap/v3/common.pb.h"
++#include "envoy/data/tap/v3/common.pb.h"
++#include "envoy/data/tap/v3/wrapper.pb.h"
++
++#include "source/common/buffer/buffer_impl.h"
++#include "source/common/network/utility.h"
++#include "source/extensions/common/tap/tap.h"
++#include "source/extensions/common/tap/tap_config_base.h"
++
++#include "test/mocks/network/mocks.h"
++#include "test/mocks/server/mocks.h"
++#include "test/test_common/logging.h"
++#include "test/test_common/registry.h"
++
++namespace Envoy {
++namespace Extensions {
++namespace TapSinks {
++namespace UDP {
++
++// Test Udp sink
++using ::testing::_;
++using ::testing::AtLeast;
++using ::testing::Return;
++
++namespace TapCommon = Extensions::Common::Tap;
++
++class TestConfigImpl : public TapCommon::TapConfigBaseImpl {
++public:
++  TestConfigImpl(const envoy::config::tap::v3::TapConfig& proto_config,
++                 Extensions::Common::Tap::Sink* admin_streamer, TapCommon::SinkContext context)
++      : TapCommon::TapConfigBaseImpl(std::move(proto_config), admin_streamer, context) {}
++};
++
++class UdpTapSinkConfigTest : public testing::Test {
++protected:
++  UdpTapSinkConfigTest() {}
++  ~UdpTapSinkConfigTest() {}
++};
++
++TEST_F(UdpTapSinkConfigTest, AddTestConfigHttpContextForUdpSink) {
++  const std::string tap_config_yaml =
++      R"EOF(
++  match:
++    any_match: true
++  output_config:
++    sinks:
++      - format: JSON_BODY_AS_STRING
++        custom_sink:
++          name: custom_sink_udp
++          typed_config:
++            "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3alpha.UdpSink
++            udp_address:
++              protocol: UDP
++              address: 127.0.0.1
++              port_value: 8089
++)EOF";
++  envoy::config::tap::v3::TapConfig tap_config;
++  TestUtility::loadFromYaml(tap_config_yaml, tap_config);
++
++  NiceMock<Server::Configuration::MockFactoryContext> factory_context;
++  TestConfigImpl(tap_config, nullptr, factory_context);
++}
++
++TEST_F(UdpTapSinkConfigTest, AddTestConfigTransportSocketContextForUdpSink) {
++  const std::string tap_config_yaml =
++      R"EOF(
++  match:
++    any_match: true
++  output_config:
++    sinks:
++      - format: JSON_BODY_AS_STRING
++        custom_sink:
++          name: custom_sink
++          typed_config:
++            "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3alpha.UdpSink
++            udp_address:
++              protocol: UDP
++              address: 127.0.0.1
++              port_value: 8089
++)EOF";
++  envoy::config::tap::v3::TapConfig tap_config;
++  TestUtility::loadFromYaml(tap_config_yaml, tap_config);
++
++  NiceMock<Server::Configuration::MockTransportSocketFactoryContext> factory_context;
++  TestConfigImpl(tap_config, nullptr, factory_context);
++}
++
++} // namespace UDP
++} // namespace TapSinks
++} // namespace Extensions
++} // namespace Envoy
+diff --git a/contrib/tap_sinks/udp_sink/test/udp_sink_test.cc b/contrib/tap_sinks/udp_sink/test/udp_sink_test.cc
+new file mode 100644
+index 0000000000..d061798051
+--- /dev/null
++++ b/contrib/tap_sinks/udp_sink/test/udp_sink_test.cc
+@@ -0,0 +1,174 @@
++#include <vector>
++
++#include "envoy/config/core/v3/address.pb.h"
++#include "envoy/config/tap/v3/common.pb.h"
++#include "envoy/data/tap/v3/common.pb.h"
++#include "envoy/data/tap/v3/wrapper.pb.h"
++#include "envoy/network/udp_packet_writer_handler.h"
++
++#include "source/common/buffer/buffer_impl.h"
++#include "source/common/network/utility.h"
++
++#include "test/mocks/network/mocks.h"
++
++#include "contrib/tap_sinks/udp_sink/source/udp_sink_impl.h"
++
++namespace Envoy {
++namespace Extensions {
++namespace TapSinks {
++namespace UDP {
++
++// Test Udp sink
++using ::testing::_;
++using ::testing::Return;
++
++class UdpTapSinkTest : public testing::Test {
++protected:
++  UdpTapSinkTest() {}
++  ~UdpTapSinkTest() {}
++
++public:
++  envoy::config::core::v3::SocketAddress socket_address_;
++  using ProtoOutputSink = envoy::config::tap::v3::OutputSink;
++};
++
++TEST_F(UdpTapSinkTest, TestConstructNotSupportTCPprotocol) {
++  envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink loc_udp_sink;
++  auto* socket_address = loc_udp_sink.mutable_udp_address();
++  socket_address->set_protocol(envoy::config::core::v3::SocketAddress::TCP);
++  socket_address->set_port_value(8080);
++  socket_address->set_address("127.0.0.1");
++  UdpTapSink loc_udp_tap_sink(loc_udp_sink);
++  EXPECT_TRUE(!loc_udp_tap_sink.isUdpPacketWriterCreated());
++}
++
++TEST_F(UdpTapSinkTest, TestConstructBadUDPAddress) {
++  envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink loc_udp_sink;
++  auto* socket_address = loc_udp_sink.mutable_udp_address();
++  socket_address->set_protocol(envoy::config::core::v3::SocketAddress::UDP);
++  socket_address->set_port_value(65539);
++  socket_address->set_address("127.800.0.1");
++  UdpTapSink loc_udp_tap_sink(loc_udp_sink);
++  EXPECT_TRUE(!loc_udp_tap_sink.isUdpPacketWriterCreated());
++}
++
++TEST_F(UdpTapSinkTest, TestConstructGoodUDPAddress) {
++  envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink loc_udp_sink;
++  auto* socket_address = loc_udp_sink.mutable_udp_address();
++  socket_address->set_protocol(envoy::config::core::v3::SocketAddress::UDP);
++  socket_address->set_port_value(8080);
++  socket_address->set_address("127.0.0.1");
++  UdpTapSink loc_udp_tap_sink(loc_udp_sink);
++  EXPECT_TRUE(loc_udp_tap_sink.isUdpPacketWriterCreated());
++}
++
++TEST_F(UdpTapSinkTest, TestSubmitTraceNotUdpPacketWriter) {
++  envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink loc_udp_sink;
++  auto* socket_address = loc_udp_sink.mutable_udp_address();
++  socket_address->set_protocol(envoy::config::core::v3::SocketAddress::TCP);
++  UdpTapSink loc_udp_tap_sink(loc_udp_sink);
++
++  // Create UdpTapSinkHandle
++  TapCommon::PerTapSinkHandlePtr local_handle =
++      loc_udp_tap_sink.createPerTapSinkHandle(99, ProtoOutputSink::OutputSinkTypeCase::kCustomSink);
++
++  Extensions::Common::Tap::TraceWrapperPtr local_buffered_trace =
++      Extensions::Common::Tap::makeTraceWrapper();
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::JSON_BODY_AS_BYTES);
++}
++
++TEST_F(UdpTapSinkTest, TestSubmitTraceForNotSUpportedFormat) {
++  // Construct UdpTapSink object
++  envoy::extensions::tap_sinks::udp_sink::v3alpha::UdpSink loc_udp_sink;
++  auto* socket_address = loc_udp_sink.mutable_udp_address();
++  socket_address->set_protocol(envoy::config::core::v3::SocketAddress::UDP);
++  socket_address->set_port_value(8080);
++  socket_address->set_address("127.0.0.1");
++  UdpTapSink loc_udp_tap_sink(loc_udp_sink);
++
++  // Create UdpTapSinkHandle
++  TapCommon::PerTapSinkHandlePtr local_handle =
++      loc_udp_tap_sink.createPerTapSinkHandle(99, ProtoOutputSink::OutputSinkTypeCase::kCustomSink);
++
++  Extensions::Common::Tap::TraceWrapperPtr local_buffered_trace =
++      Extensions::Common::Tap::makeTraceWrapper();
++  // case1 format PROTO_BINARY
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::PROTO_BINARY);
++  // case2 format PROTO_BINARY_LENGTH_DELIMITED
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::PROTO_BINARY_LENGTH_DELIMITED);
++  // case3 format PROTO_TEXT
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::PROTO_TEXT);
++}
++
++// In order to control the return value of writePacket, then
++// re Mock class UdpPacketWriter and not use existing Network::MockUdpPacketWriter
++class MockUdpPacketWriterNew : public Network::UdpPacketWriter {
++public:
++  MockUdpPacketWriterNew(bool isReturnOk) : isReturnOkForwritePacket_(isReturnOk){};
++  ~MockUdpPacketWriterNew() override{};
++
++  Api::IoCallUint64Result writePacket(const Buffer::Instance& buffer,
++                                      const Network::Address::Ip* local_ip,
++                                      const Network::Address::Instance& peer_address) override {
++    (void)buffer;
++    (void)local_ip;
++    (void)peer_address;
++    if (isReturnOkForwritePacket_) {
++      return Api::IoCallUint64Result(99, Api::IoError::none());
++    } else {
++      return Api::IoCallUint64Result(0, Network::IoSocketError::getIoSocketEagainError());
++    }
++  }
++  MOCK_METHOD(bool, isWriteBlocked, (), (const));
++  MOCK_METHOD(void, setWritable, ());
++  MOCK_METHOD(uint64_t, getMaxPacketSize, (const Network::Address::Instance& peer_address),
++              (const));
++  MOCK_METHOD(bool, isBatchMode, (), (const));
++  MOCK_METHOD(Network::UdpPacketWriterBuffer, getNextWriteLocation,
++              (const Network::Address::Ip* local_ip,
++               const Network::Address::Instance& peer_address));
++  MOCK_METHOD(Api::IoCallUint64Result, flush, ());
++
++private:
++  const bool isReturnOkForwritePacket_;
++};
++
++TEST_F(UdpTapSinkTest, TestSubmitTraceSendOk) {
++  // Construct UdpTapSink object
++  std::unique_ptr<MockUdpPacketWriterNew> local_UdpPacketWriter =
++      std::make_unique<MockUdpPacketWriterNew>(true);
++  UdpTapSink loc_udp_tap_sink(std::move(local_UdpPacketWriter));
++
++  // Create UdpTapSinkHandle
++  TapCommon::PerTapSinkHandlePtr local_handle =
++      loc_udp_tap_sink.createPerTapSinkHandle(99, ProtoOutputSink::OutputSinkTypeCase::kCustomSink);
++
++  Extensions::Common::Tap::TraceWrapperPtr local_buffered_trace =
++      Extensions::Common::Tap::makeTraceWrapper();
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::JSON_BODY_AS_STRING);
++}
++
++TEST_F(UdpTapSinkTest, TestSubmitTraceSendNotOk) {
++  // Construct UdpTapSink object
++  std::unique_ptr<MockUdpPacketWriterNew> local_UdpPacketWriter =
++      std::make_unique<MockUdpPacketWriterNew>(false);
++  UdpTapSink loc_udp_tap_sink(std::move(local_UdpPacketWriter));
++
++  // Create UdpTapSinkHandle
++  TapCommon::PerTapSinkHandlePtr local_handle =
++      loc_udp_tap_sink.createPerTapSinkHandle(99, ProtoOutputSink::OutputSinkTypeCase::kCustomSink);
++
++  Extensions::Common::Tap::TraceWrapperPtr local_buffered_trace =
++      Extensions::Common::Tap::makeTraceWrapper();
++  local_handle->submitTrace(std::move(local_buffered_trace),
++                            envoy::config::tap::v3::OutputSink::JSON_BODY_AS_STRING);
++}
++} // namespace UDP
++} // namespace TapSinks
++} // namespace Extensions
++} // namespace Envoy
+diff --git a/docs/root/api-v3/config/config.rst b/docs/root/api-v3/config/config.rst
+index a6bc545ec2..b425c6e684 100644
+--- a/docs/root/api-v3/config/config.rst
++++ b/docs/root/api-v3/config/config.rst
+@@ -42,7 +42,6 @@ Extensions
+   retry/retry
+   stat_sinks/stat_sinks
+   string_matcher/string_matcher
+-  tap_sinks/tap_sinks
+   transport_socket/transport_socket
+   upstream/upstream
+   wasm/wasm
+diff --git a/docs/root/api-v3/config/contrib/contrib.rst b/docs/root/api-v3/config/contrib/contrib.rst
+index 4e50b5bc29..b928e73a3c 100644
+--- a/docs/root/api-v3/config/contrib/contrib.rst
++++ b/docs/root/api-v3/config/contrib/contrib.rst
+@@ -14,3 +14,4 @@ Contrib extensions
+   hyperscan/regex_engine
+   dlb/dlb
+   qat/qat
++  tap_sinks/tap_sinks
+diff --git a/docs/root/api-v3/config/contrib/tap_sinks/tap_sinks.rst b/docs/root/api-v3/config/contrib/tap_sinks/tap_sinks.rst
+new file mode 100644
+index 0000000000..8be2297bf6
+--- /dev/null
++++ b/docs/root/api-v3/config/contrib/tap_sinks/tap_sinks.rst
+@@ -0,0 +1,8 @@
++TAP UDP sink extension
++======================
++
++.. toctree::
++  :glob:
++  :maxdepth: 2
++
++  ../../../extensions/tap_sinks/*/v3alpha/*
+diff --git a/docs/root/api-v3/config/tap_sinks/tap_sinks.rst b/docs/root/api-v3/config/tap_sinks/tap_sinks.rst
+deleted file mode 100644
+index fa60a06c97..0000000000
+--- a/docs/root/api-v3/config/tap_sinks/tap_sinks.rst
++++ /dev/null
+@@ -1,8 +0,0 @@
+-Transport sockets
+-=================
+-
+-.. toctree::
+-  :glob:
+-  :maxdepth: 2
+-
+-  ../../extensions/tap_sinks/*/v3/*
+diff --git a/source/extensions/common/tap/BUILD b/source/extensions/common/tap/BUILD
+index de8d839d38..0db1cf72d9 100644
+--- a/source/extensions/common/tap/BUILD
++++ b/source/extensions/common/tap/BUILD
+@@ -30,11 +30,9 @@ envoy_cc_library(
+         "//source/common/common:assert_lib",
+         "//source/common/common:hex_lib",
+         "//source/common/config:utility_lib",
+-        "//source/common/network:udp_packet_writer_handler_lib",
+         "//source/extensions/common/matcher:matcher_lib",
+         "@envoy_api//envoy/config/tap/v3:pkg_cc_proto",
+         "@envoy_api//envoy/data/tap/v3:pkg_cc_proto",
+-        "@envoy_api//envoy/extensions/tap_sinks/udp_sink/v3:pkg_cc_proto",
+     ],
+ )
+ 
+diff --git a/source/extensions/common/tap/tap_config_base.cc b/source/extensions/common/tap/tap_config_base.cc
+index cdc110431e..f412c49738 100644
+--- a/source/extensions/common/tap/tap_config_base.cc
++++ b/source/extensions/common/tap/tap_config_base.cc
+@@ -3,7 +3,6 @@
+ #include "envoy/config/tap/v3/common.pb.h"
+ #include "envoy/data/tap/v3/common.pb.h"
+ #include "envoy/data/tap/v3/wrapper.pb.h"
+-#include "envoy/extensions/tap_sinks/udp_sink/v3/udp_sink.pb.validate.h"
+ #include "envoy/server/transport_socket_config.h"
+ 
+ #include "source/common/common/assert.h"
+diff --git a/source/extensions/extensions_build_config.bzl b/source/extensions/extensions_build_config.bzl
+index 551a3f4ce7..36ba8f0a7b 100644
+--- a/source/extensions/extensions_build_config.bzl
++++ b/source/extensions/extensions_build_config.bzl
+@@ -298,12 +298,6 @@ EXTENSIONS = {
+     "envoy.tracers.opentelemetry.samplers.always_on":         "//source/extensions/tracers/opentelemetry/samplers/always_on:config",
+     "envoy.tracers.opentelemetry.samplers.dynatrace":         "//source/extensions/tracers/opentelemetry/samplers/dynatrace:config",
+ 
+-    #
+-    # Tap sinks
+-    #
+-
+-    "envoy.tap_sinks.udp_sink":                     "//source/extensions/tap_sinks/udp_sink:config",
+-
+     #
+     # Transport sockets
+     #
+diff --git a/source/extensions/extensions_metadata.yaml b/source/extensions/extensions_metadata.yaml
+index 1aa35a0e75..ef2f3b5e6a 100644
+--- a/source/extensions/extensions_metadata.yaml
++++ b/source/extensions/extensions_metadata.yaml
+@@ -1218,15 +1218,6 @@ envoy.string_matcher.lua:
+   status: alpha
+   type_urls:
+   - envoy.extensions.string_matcher.lua.v3.Lua
+-envoy.tap_sinks.udp_sink:
+-  categories:
+-  - envoy.filters.http
+-  - envoy.transport_sockets.downstream
+-  - envoy.transport_sockets.upstream
+-  security_posture: requires_trusted_downstream_and_upstream
+-  status: alpha
+-  type_urls:
+-  - envoy.extensions.tap_sinks.udp_sink.v3.UdpSink
+ envoy.tls.cert_validator.spiffe:
+   categories:
+   - envoy.tls.cert_validator
+diff --git a/test/extensions/common/tap/BUILD b/test/extensions/common/tap/BUILD
+index a05ee01e50..ccfb7cddc3 100644
+--- a/test/extensions/common/tap/BUILD
++++ b/test/extensions/common/tap/BUILD
+@@ -28,7 +28,6 @@ envoy_cc_test(
+     deps = [
+         "//source/extensions/common/tap:admin",
+         "//source/extensions/common/tap:tap_config_base",
+-        "//source/extensions/tap_sinks/udp_sink:config",
+         "//test/mocks/server:admin_mocks",
+         "//test/mocks/server:admin_stream_mocks",
+         "//test/mocks/server:server_mocks",
+@@ -45,7 +44,6 @@ envoy_cc_test(
+     deps = [
+         "//source/common/buffer:buffer_lib",
+         "//source/extensions/common/tap:tap_config_base",
+-        "//test/mocks/network:network_mocks",
+         "@envoy_api//envoy/config/tap/v3:pkg_cc_proto",
+         "@envoy_api//envoy/data/tap/v3:pkg_cc_proto",
+     ],
+diff --git a/test/extensions/common/tap/admin_test.cc b/test/extensions/common/tap/admin_test.cc
+index 7dd7e7d90d..f37f3e6409 100644
+--- a/test/extensions/common/tap/admin_test.cc
++++ b/test/extensions/common/tap/admin_test.cc
+@@ -174,7 +174,6 @@ public:
+                  Extensions::Common::Tap::Sink* admin_streamer, SinkContext context)
+       : TapConfigBaseImpl(std::move(proto_config), admin_streamer, context) {}
+ };
+-/*
+ TEST(TypedExtensionConfigTest, AddTestConfigHttpContext) {
+   const std::string tap_config_yaml =
+       R"EOF(
+@@ -197,11 +196,8 @@ TEST(TypedExtensionConfigTest, AddTestConfigHttpContext) {
+       .WillRepeatedly(Invoke([]() -> ProtobufTypes::MessagePtr {
+         return std::make_unique<ProtobufWkt::StringValue>();
+       }));
+-  EXPECT_CALL(
+-      factory_impl,
+-      createHttpSinkPtr(
+-           _,
+-          testing::VariantWith<std::reference_wrapper<Server::Configuration::FactoryContext>>(_)));
++  EXPECT_CALL(factory_impl, createHttpSinkPtr(_, _));
++
+   Registry::InjectFactory<TapSinkFactory> factory(factory_impl);
+ 
+   NiceMock<Server::Configuration::MockFactoryContext> factory_context;
+@@ -230,60 +226,9 @@ TEST(TypedExtensionConfigTest, AddTestConfigTransportSocketContext) {
+       .WillRepeatedly(Invoke([]() -> ProtobufTypes::MessagePtr {
+         return std::make_unique<ProtobufWkt::StringValue>();
+       }));
+-  EXPECT_CALL(
+-      factory_impl,
+-      createTransportSinkPtr(
+-          _, testing::VariantWith<
+-                 std::reference_wrapper<Server::Configuration::TransportSocketFactoryContext>>(_)));
+-  Registry::InjectFactory<TapSinkFactory> factory(factory_impl);
+-
+-  NiceMock<Server::Configuration::MockTransportSocketFactoryContext> factory_context;
+-  TestConfigImpl(tap_config, nullptr, factory_context);
+-}
+-*/
+-TEST(TypedExtensionConfigTest, AddTestConfigHttpContextForUdpSink) {
+-  const std::string tap_config_yaml =
+-      R"EOF(
+-  match:
+-    any_match: true
+-  output_config:
+-    sinks:
+-      - format: JSON_BODY_AS_STRING
+-        custom_sink:
+-          name: custom_sink_udp
+-          typed_config:
+-            "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3.UdpSink
+-            udp_address:
+-              protocol: UDP
+-              address: 127.0.0.1
+-              port_value: 8089
+-)EOF";
+-  envoy::config::tap::v3::TapConfig tap_config;
+-  TestUtility::loadFromYaml(tap_config_yaml, tap_config);
++  EXPECT_CALL(factory_impl, createTransportSinkPtr(_, _));
+ 
+-  NiceMock<Server::Configuration::MockFactoryContext> factory_context;
+-  TestConfigImpl(tap_config, nullptr, factory_context);
+-}
+-
+-TEST(TypedExtensionConfigTest, AddTestConfigTransportSocketContextForUdpSink) {
+-  const std::string tap_config_yaml =
+-      R"EOF(
+-  match:
+-    any_match: true
+-  output_config:
+-    sinks:
+-      - format: PROTO_BINARY
+-        custom_sink:
+-          name: custom_sink
+-          typed_config:
+-            "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3.UdpSink
+-            udp_address:
+-              protocol: UDP
+-              address: 127.0.0.1
+-              port_value: 8089
+-)EOF";
+-  envoy::config::tap::v3::TapConfig tap_config;
+-  TestUtility::loadFromYaml(tap_config_yaml, tap_config);
++  Registry::InjectFactory<TapSinkFactory> factory(factory_impl);
+ 
+   NiceMock<Server::Configuration::MockTransportSocketFactoryContext> factory_context;
+   TestConfigImpl(tap_config, nullptr, factory_context);
+diff --git a/test/extensions/filters/http/tap/BUILD b/test/extensions/filters/http/tap/BUILD
+index 537867034a..e692767264 100644
+--- a/test/extensions/filters/http/tap/BUILD
++++ b/test/extensions/filters/http/tap/BUILD
+@@ -61,7 +61,6 @@ envoy_extension_cc_test(
+     rbe_pool = "6gig",
+     deps = [
+         "//source/extensions/filters/http/tap:config",
+-        "//source/extensions/tap_sinks/udp_sink:config",
+         "//test/extensions/common/tap:common",
+         "//test/integration:http_integration_lib",
+         "//test/test_common:utility_lib",

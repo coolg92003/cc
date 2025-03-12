@@ -1,0 +1,497 @@
+[2023-10-31 05:33:56.369][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:33:56.369][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:33:56.626][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:01.369][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:01.369][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:01.369][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:01.369][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:01.369][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:01.369][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:01.627][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:06.369][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:06.369][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:06.369][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:06.369][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:06.369][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:06.369][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:06.627][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:11.369][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:11.369][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:11.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:11.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:11.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:11.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:11.627][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:16.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:16.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:16.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:16.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:16.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:16.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:16.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:21.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:21.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:21.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:21.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:21.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:21.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:21.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:26.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:26.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:26.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:26.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:26.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:26.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:26.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:31.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:31.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:31.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:31.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:31.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:31.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:31.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:36.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:36.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:36.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:36.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:36.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:36.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:36.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:41.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:41.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:41.371][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:41.371][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:41.371][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:41.371][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:41.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:46.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:46.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:46.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:46.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:46.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:46.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:46.628][22][debug][main] [source/server/server.cc:263] flushing stats
+[2023-10-31 05:34:47.998][30][trace][http] [source/common/http/conn_manager_impl.cc:128] LoadShedPoint envoy.load_shed_points.http_connection_manager_decode_headers is not found. Is it configured?
+[2023-10-31 05:34:47.998][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf01f3b0 for 3600000ms, min is 3600000ms
+[2023-10-31 05:34:47.998][30][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"0"] raising connection event 2
+[2023-10-31 05:34:47.998][30][debug][conn_handler] [source/extensions/listener_managers/listener_manager/active_tcp_listener.cc:158] [Tags: "ConnectionId":"0"] CFXTS: new connection from 127.0.0.1:39482
+[2023-10-31 05:34:47.998][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:47.998][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.011][30][critical][backtrace] [./source/server/backtrace.h:96] #0: Envoy::Server::ActiveTcpSocket::newConnection() [0x55c3316f3c3e]
+[2023-10-31 05:34:48.023][30][critical][backtrace] [./source/server/backtrace.h:96] #1: Envoy::Server::ActiveTcpSocket::continueFilterChain() [0x55c3316f3e5e]
+[2023-10-31 05:34:48.035][30][critical][backtrace] [./source/server/backtrace.h:96] #2: Envoy::Server::ActiveTcpListener::onAcceptWorker() [0x55c3316eefeb]
+[2023-10-31 05:34:48.047][30][critical][backtrace] [./source/server/backtrace.h:96] #3: Envoy::Server::ActiveTcpListener::onAccept() [0x55c3316ef48e]
+[2023-10-31 05:34:48.059][30][critical][backtrace] [./source/server/backtrace.h:96] #4: Envoy::Network::TcpListenerImpl::onSocketEvent() [0x55c331a07976]
+[2023-10-31 05:34:48.071][30][critical][backtrace] [./source/server/backtrace.h:96] #5: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.082][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.094][30][critical][backtrace] [./source/server/backtrace.h:96] #7: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.106][30][critical][backtrace] [./source/server/backtrace.h:96] #8: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.118][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.129][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.130][30][critical][backtrace] [./source/server/backtrace.h:96] #11: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.130][30][trace][misc] [source/common/network/tcp_listener_impl.cc:114] TcpListener accepted 1 new connections.
+[2023-10-31 05:34:48.130][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"0"] socket event: 3
+[2023-10-31 05:34:48.130][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"0"] write ready
+[2023-10-31 05:34:48.130][30][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"0"] read ready. dispatch_buffered_data=0
+[2023-10-31 05:34:48.130][30][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"0"] read returns: 212
+[2023-10-31 05:34:48.130][30][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"0"] read error: Resource temporarily unavailable, code: 0
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:2079] LoadShedPoint envoy.load_shed_points.http2_server_go_away_on_dispatch is not found. Is it configured?
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:1823] Codec does not have Metadata frame support.
+[2023-10-31 05:34:48.130][30][debug][http2] [source/common/http/http2/codec_impl.cc:1621] [Tags: "ConnectionId":"0"] updating connection-level initial window size to 268435456
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"0"] dispatching 212 bytes
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"0"] about to recv frame type=4, flags=0, stream_id=0
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:2141] [Tags: "ConnectionId":"0"] track inbound frame type=4 flags=0 length=18 padding_length=0
+[2023-10-31 05:34:48.130][30][trace][http2] [source/common/http/http2/codec_impl.cc:1089] [Tags: "ConnectionId":"0"] CFXT, recv frame type=4
+[2023-10-31 05:34:48.130][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.130][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.142][30][critical][backtrace] [./source/server/backtrace.h:96] #0: http2::adapter::CallbackVisitor::OnSettingsEnd() [0x55c331a9aee4]
+[2023-10-31 05:34:48.154][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b5a2]
+[2023-10-31 05:34:48.166][30][critical][backtrace] [./source/server/backtrace.h:96] #2: nghttp2_session_on_settings_received [0x55c330078e55]
+[2023-10-31 05:34:48.177][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_mem_recv [0x55c33007c666]
+[2023-10-31 05:34:48.189][30][critical][backtrace] [./source/server/backtrace.h:96] #4: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.201][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.212][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.224][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.236][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.249][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #11: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:96] #17: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.261][30][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"0"] about to recv frame type=8, flags=0, stream_id=0
+[2023-10-31 05:34:48.261][30][trace][http2] [source/common/http/http2/codec_impl.cc:2141] [Tags: "ConnectionId":"0"] track inbound frame type=8 flags=0 length=4 padding_length=0
+[2023-10-31 05:34:48.261][30][trace][http2] [source/common/http/http2/codec_impl.cc:1089] [Tags: "ConnectionId":"0"] CFXT, recv frame type=8
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.261][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.273][30][critical][backtrace] [./source/server/backtrace.h:96] #0: http2::adapter::CallbackVisitor::OnWindowUpdate() [0x55c331a9ac52]
+[2023-10-31 05:34:48.285][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b54b]
+[2023-10-31 05:34:48.297][30][critical][backtrace] [./source/server/backtrace.h:96] #2: nghttp2_session_on_window_update_received [0x55c330077c25]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_mem_recv [0x55c33007bfff]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #4: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #11: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:96] #17: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.309][30][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"0"] about to recv frame type=1, flags=4, stream_id=1
+[2023-10-31 05:34:48.309][30][trace][http2] [source/common/http/http2/codec_impl.cc:2141] [Tags: "ConnectionId":"0"] track inbound frame type=1 flags=4 length=104 padding_length=0
+[2023-10-31 05:34:48.309][30][debug][http] [source/common/http/conn_manager_impl.cc:391] [Tags: "ConnectionId":"0"] CFXTS, new stream
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.309][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.321][30][critical][backtrace] [./source/server/backtrace.h:96] #0: Envoy::Http::Http2::ConnectionImpl::Http2Callbacks::Http2Callbacks()::{lambda()#2}::_FUN() [0x55c3317bb986]
+[2023-10-31 05:34:48.333][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::CallbackVisitor::OnBeginHeadersForStream() [0x55c331a9cdb3]
+[2023-10-31 05:34:48.345][30][critical][backtrace] [./source/server/backtrace.h:96] #2: http2::adapter::callbacks::OnBeginHeaders() [0x55c331a89b43]
+[2023-10-31 05:34:48.356][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_on_request_headers_received [0x55c3300773b6]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #4: nghttp2_session_mem_recv [0x55c33007bf92]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #5: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #11: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #12: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #13: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #15: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #17: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:96] #18: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.368][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.368][30][trace][http2] [source/common/http/http2/codec_impl.cc:1089] [Tags: "ConnectionId":"0"] CFXT, recv frame type=1
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.368][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.380][30][critical][backtrace] [./source/server/backtrace.h:96] #0: http2::adapter::CallbackVisitor::OnEndHeadersForStream() [0x55c331a9ab2c]
+[2023-10-31 05:34:48.392][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b44d]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #2: nghttp2_session_mem_recv [0x55c33007cbb5]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #3: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #4: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #10: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #11: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #12: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #14: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.404][30][critical][backtrace] [./source/server/backtrace.h:96] #16: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.405][30][debug][http] [source/common/http/conn_manager_impl.cc:1193] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] CFXTS, request headers complete (end_stream=false):
+':method', 'GET'
+':path', '/trace'
+':scheme', 'http'
+':authority', '127.0.0.1:8022'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+
+[2023-10-31 05:34:48.405][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.405][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #0: Envoy::Http::Http2::ConnectionImpl::Http2Callbacks::Http2Callbacks()::{lambda()#6}::_FUN() [0x55c3317c9385]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::CallbackVisitor::OnEndHeadersForStream() [0x55c331a9ab2c]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #2: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b44d]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_mem_recv [0x55c33007cbb5]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #4: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.416][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #11: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:96] #17: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.417][30][debug][connection] [./source/common/network/connection_impl.h:97] [Tags: "ConnectionId":"0"] current connecting state: false
+[2023-10-31 05:34:48.417][30][warning][misc] [./source/extensions/filters/http/tap/tap_filter.h:103] the type of Http::StreamDecoderFilterCallbacks : N5Envoy4Http28StreamDecoderFilterCallbacksE
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.417][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.429][30][critical][backtrace] [./source/server/backtrace.h:96] #0: Envoy::Extensions::HttpFilters::TapFilter::TapFilterFactory::createFilterFactoryFromProtoTyped()::{lambda()#1}::operator()() [0x55c32fbe0c3c]
+[2023-10-31 05:34:48.440][30][critical][backtrace] [./source/server/backtrace.h:96] #1: Envoy::Http::FilterManager::applyFilterFactoryCb() [0x55c3318bc5b4]
+[2023-10-31 05:34:48.452][30][critical][backtrace] [./source/server/backtrace.h:96] #2: Envoy::Http::FilterChainUtility::createFilterChainForFactories() [0x55c3318ade0e]
+[2023-10-31 05:34:48.464][30][critical][backtrace] [./source/server/backtrace.h:96] #3: Envoy::Extensions::NetworkFilters::HttpConnectionManager::HttpConnectionManagerConfig::createFilterChain() [0x55c33175024a]
+[2023-10-31 05:34:48.476][30][critical][backtrace] [./source/server/backtrace.h:96] #4: Envoy::Http::FilterManager::createFilterChain() [0x55c3318c17e4]
+[2023-10-31 05:34:48.488][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::ConnectionManagerImpl::ActiveStream::decodeHeaders() [0x55c331774cb6]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ConnectionImpl::onFrameReceived() [0x55c3317c8bfc]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::Http2::ConnectionImpl::Http2Callbacks::Http2Callbacks()::{lambda()#6}::_FUN() [0x55c3317c9385]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #8: http2::adapter::CallbackVisitor::OnEndHeadersForStream() [0x55c331a9ab2c]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #9: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b44d]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #10: nghttp2_session_mem_recv [0x55c33007cbb5]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #11: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #13: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #14: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #17: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #18: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #19: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #20: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #21: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #22: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #23: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #24: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.500][30][warning][misc] [source/extensions/filters/http/tap/config.cc:47] CFXT, after lambda
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #0: Envoy::Http::FilterChainUtility::createFilterChainForFactories() [0x55c3318ade0e]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #1: Envoy::Extensions::NetworkFilters::HttpConnectionManager::HttpConnectionManagerConfig::createFilterChain() [0x55c33175024a]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #2: Envoy::Http::FilterManager::createFilterChain() [0x55c3318c17e4]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #3: Envoy::Http::ConnectionManagerImpl::ActiveStream::decodeHeaders() [0x55c331774cb6]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #4: Envoy::Http::Http2::ConnectionImpl::onFrameReceived() [0x55c3317c8bfc]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::Http2Callbacks::Http2Callbacks()::{lambda()#6}::_FUN() [0x55c3317c9385]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #6: http2::adapter::CallbackVisitor::OnEndHeadersForStream() [0x55c331a9ab2c]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #7: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b44d]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #8: nghttp2_session_mem_recv [0x55c33007cbb5]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #9: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #11: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #13: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #14: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #16: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #17: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #18: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #19: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #20: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #21: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.500][30][critical][backtrace] [./source/server/backtrace.h:96] #22: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.500][30][trace][http] [source/common/http/filter_manager.cc:571] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode headers called: filter=envoy.filters.http.tap.cfx status=0
+[2023-10-31 05:34:48.500][30][debug][router] [source/common/router/router.cc:519] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] cluster 'service1' match for URL '/trace'
+[2023-10-31 05:34:48.501][30][debug][router] [source/common/router/router.cc:732] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] router decoding headers:
+':method', 'GET'
+':path', '/trace'
+':scheme', 'http'
+':authority', '127.0.0.1:8022'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+'x-forwarded-proto', 'http'
+'x-request-id', 'ce3d0f00-6cad-40eb-b098-2a6855ffcc92'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2023-10-31 05:34:48.501][30][debug][pool] [source/common/http/conn_pool_base.cc:76] queueing stream due to no available connections (ready=0 busy=0 connecting=0)
+[2023-10-31 05:34:48.501][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:291] trying to create new connection
+[2023-10-31 05:34:48.501][30][trace][pool] [source/common/conn_pool/conn_pool_base.cc:292] ConnPoolImplBase 0x2415bf0dbe00, ready_clients_.size(): 0, busy_clients_.size(): 0, connecting_clients_.size(): 0, connecting_stream_capacity_: 0, num_active_streams_: 0, pending_streams_.size(): 1 per upstream preconnect ratio: 1
+[2023-10-31 05:34:48.501][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:145] creating a new connection (connecting=0)
+[2023-10-31 05:34:48.501][30][debug][connection] [./source/common/network/connection_impl.h:97] [Tags: "ConnectionId":"1"] current connecting state: true
+[2023-10-31 05:34:48.501][30][debug][client] [source/common/http/codec_client.cc:57] [Tags: "ConnectionId":"1"] connecting
+[2023-10-31 05:34:48.501][30][debug][connection] [source/common/network/connection_impl.cc:1008] [Tags: "ConnectionId":"1"] connecting to 127.0.0.1:9922
+[2023-10-31 05:34:48.501][30][debug][connection] [source/common/network/connection_impl.cc:1028] [Tags: "ConnectionId":"1"] connection in progress
+[2023-10-31 05:34:48.501][30][trace][pool] [source/common/conn_pool/conn_pool_base.cc:131] not creating a new connection, shouldCreateNewConnection returned false.
+[2023-10-31 05:34:48.501][30][trace][http] [source/common/http/filter_manager.cc:571] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode headers called: filter=envoy.filters.http.upstream_codec status=4
+[2023-10-31 05:34:48.501][30][trace][http] [source/common/http/filter_manager.cc:571] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode headers called: filter=envoy.filters.http.router status=1
+[2023-10-31 05:34:48.501][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.501][30][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"0"] about to recv frame type=0, flags=1, stream_id=1
+[2023-10-31 05:34:48.501][30][trace][http2] [source/common/http/http2/codec_impl.cc:1089] [Tags: "ConnectionId":"0"] CFXT, recv frame type=0
+[2023-10-31 05:34:48.501][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.501][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.513][30][critical][backtrace] [./source/server/backtrace.h:96] #0: http2::adapter::CallbackVisitor::OnEndStream() [0x55c331a9b031]
+[2023-10-31 05:34:48.526][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b422]
+[2023-10-31 05:34:48.537][30][critical][backtrace] [./source/server/backtrace.h:96] #2: nghttp2_session_on_data_received [0x55c330076ad0]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_mem_recv [0x55c33007b10b]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #4: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #11: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.552][30][critical][backtrace] [./source/server/backtrace.h:96] #17: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.552][30][trace][http2] [source/common/http/http2/codec_impl.cc:2141] [Tags: "ConnectionId":"0"] track inbound frame type=0 flags=1 length=26 padding_length=0
+[2023-10-31 05:34:48.552][30][debug][http] [source/common/http/conn_manager_impl.cc:1177] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] request end stream
+[2023-10-31 05:34:48.552][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.552][30][trace][http] [source/common/http/filter_manager.cc:703] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode data called: filter=envoy.filters.http.tap.cfx status=0
+[2023-10-31 05:34:48.552][30][trace][http] [source/common/http/filter_manager.cc:703] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode data called: filter=envoy.filters.http.router status=3
+[2023-10-31 05:34:48.552][30][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"0"] dispatched 212 bytes
+[2023-10-31 05:34:48.552][30][trace][http2] [source/common/http/http2/codec_impl.cc:1319] [Tags: "ConnectionId":"0"] about to send frame type=4, flags=0
+[2023-10-31 05:34:48.552][30][trace][http2] [source/common/http/http2/codec_impl.cc:1342] [Tags: "ConnectionId":"0"] send data: bytes=33
+[2023-10-31 05:34:48.552][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 33 bytes, end_stream false
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=4, stream_id=0, length=24
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1319] [Tags: "ConnectionId":"0"] about to send frame type=4, flags=1
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1342] [Tags: "ConnectionId":"0"] send data: bytes=9
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 9 bytes, end_stream false
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=4, stream_id=0, length=0
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1319] [Tags: "ConnectionId":"0"] about to send frame type=8, flags=0
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1342] [Tags: "ConnectionId":"0"] send data: bytes=13
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 13 bytes, end_stream false
+[2023-10-31 05:34:48.553][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=8, stream_id=0, length=4
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"1"] socket event: 2
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"1"] write ready
+[2023-10-31 05:34:48.553][30][debug][connection] [source/common/network/connection_impl.cc:746] [Tags: "ConnectionId":"1"] connected
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"1"] raising connection event 2
+[2023-10-31 05:34:48.553][30][debug][client] [source/common/http/codec_client.cc:88] [Tags: "ConnectionId":"1"] connected
+[2023-10-31 05:34:48.553][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:328] [Tags: "ConnectionId":"1"] attaching to next stream
+[2023-10-31 05:34:48.553][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:182] [Tags: "ConnectionId":"1"] creating stream
+[2023-10-31 05:34:48.553][30][debug][router] [source/common/router/upstream_request.cc:563] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] pool ready
+[2023-10-31 05:34:48.553][30][trace][router] [source/common/router/upstream_codec_filter.cc:61] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] proxying headers
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"1"] writing 322 bytes, end_stream false
+[2023-10-31 05:34:48.553][30][trace][http] [source/common/http/filter_manager.cc:67] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] continuing filter chain: filter=0x2415bf87b080
+[2023-10-31 05:34:48.553][30][trace][router] [source/common/router/upstream_codec_filter.cc:93] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] proxying 26 bytes
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"1"] writing 26 bytes, end_stream false
+[2023-10-31 05:34:48.553][30][debug][client] [source/common/http/codec_client.cc:141] [Tags: "ConnectionId":"1"] encode complete
+[2023-10-31 05:34:48.553][30][trace][http] [source/common/http/filter_manager.cc:703] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] decode data called: filter=envoy.filters.http.upstream_codec status=0
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"1"] write ready
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"1"] write returns: 348
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"0"] socket event: 2
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"0"] write ready
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"0"] write returns: 55
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"1"] socket event: 2
+[2023-10-31 05:34:48.553][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"1"] write ready
+[2023-10-31 05:34:48.554][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"0"] socket event: 3
+[2023-10-31 05:34:48.554][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"0"] write ready
+[2023-10-31 05:34:48.554][30][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"0"] read ready. dispatch_buffered_data=0
+[2023-10-31 05:34:48.554][30][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"0"] read returns: 9
+[2023-10-31 05:34:48.554][30][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"0"] read error: Resource temporarily unavailable, code: 0
+[2023-10-31 05:34:48.554][30][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"0"] dispatching 9 bytes
+[2023-10-31 05:34:48.554][30][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"0"] about to recv frame type=4, flags=1, stream_id=0
+[2023-10-31 05:34:48.554][30][trace][http2] [source/common/http/http2/codec_impl.cc:2141] [Tags: "ConnectionId":"0"] track inbound frame type=4 flags=1 length=0 padding_length=0
+[2023-10-31 05:34:48.554][30][trace][http2] [source/common/http/http2/codec_impl.cc:1089] [Tags: "ConnectionId":"0"] CFXT, recv frame type=4
+[2023-10-31 05:34:48.554][30][critical][backtrace] [./source/server/backtrace.h:91] Backtrace (use tools/stack_decode.py to get line numbers):
+[2023-10-31 05:34:48.554][30][critical][backtrace] [./source/server/backtrace.h:92] CFXT:Envoy version: d88a4fc812063be428341913a3531c395f033bcb/1.28.0-dev/Modified/RELEASE/BoringSSL
+[2023-10-31 05:34:48.567][30][critical][backtrace] [./source/server/backtrace.h:96] #0: http2::adapter::CallbackVisitor::OnSettingsAck() [0x55c331a9a931]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #1: http2::adapter::callbacks::OnFrameReceived() [0x55c331a8b4c4]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #2: nghttp2_session_on_settings_received [0x55c330078e55]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #3: nghttp2_session_mem_recv [0x55c33007c666]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #4: http2::adapter::NgHttp2Adapter::ProcessBytes() [0x55c331a87dd8]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #5: Envoy::Http::Http2::ConnectionImpl::dispatch() [0x55c3317c6eae]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #6: Envoy::Http::Http2::ServerConnectionImpl::dispatch() [0x55c3317c7770]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #7: Envoy::Http::ConnectionManagerImpl::onData() [0x55c331771b93]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #8: Envoy::Network::FilterManagerImpl::onContinueReading() [0x55c331a5105e]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #9: Envoy::Network::ConnectionImpl::onReadReady() [0x55c3319f8ecd]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #10: Envoy::Network::ConnectionImpl::onFileEvent() [0x55c3319fca95]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #11: std::_Function_handler<>::_M_invoke() [0x55c3319e55f3]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #12: Envoy::Event::FileEventImpl::mergeInjectedEventsAndRunCb() [0x55c3319e9bd8]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #13: event_process_active_single_queue.isra.0 [0x55c3321417b2]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #14: event_base_loop [0x55c332141f3f]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #15: Envoy::Server::WorkerImpl::threadRoutine() [0x55c331116cc6]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #16: Envoy::Thread::ThreadImplPosix::ThreadImplPosix()::{lambda()#1}::_FUN() [0x55c33214ba19]
+[2023-10-31 05:34:48.579][30][critical][backtrace] [./source/server/backtrace.h:96] #17: start_thread [0x7f91a1f93609]
+[2023-10-31 05:34:48.579][30][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"0"] dispatched 9 bytes
+[2023-10-31 05:34:48.579][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"1"] socket event: 3
+[2023-10-31 05:34:48.579][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"1"] write ready
+[2023-10-31 05:34:48.579][30][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"1"] read ready. dispatch_buffered_data=0
+[2023-10-31 05:34:48.579][30][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"1"] read returns: 188
+[2023-10-31 05:34:48.579][30][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"1"] read returns: 0
+[2023-10-31 05:34:48.579][30][trace][http] [source/common/http/http1/codec_impl.cc:648] [Tags: "ConnectionId":"1"] parsing 188 bytes
+[2023-10-31 05:34:48.579][30][trace][http] [source/common/http/http1/codec_impl.cc:590] [Tags: "ConnectionId":"1"] message begin
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"1"] completed header: key=Content-Type value=application/json
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"1"] completed header: key=Content-Length value=43
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"1"] completed header: key=Server value=Werkzeug/2.0.3 Python/3.6.8
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:841] [Tags: "ConnectionId":"1"] onHeadersCompleteImpl
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"1"] completed header: key=Date value=Tue, 31 Oct 2023 05:34:48 GMT
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:1486] [Tags: "ConnectionId":"1"] status_code 200
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:1496] [Tags: "ConnectionId":"1"] Client: onHeadersComplete size=4
+[2023-10-31 05:34:48.580][30][trace][router] [source/common/router/upstream_request.cc:256] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] upstream response headers:
+':status', '200'
+'content-type', 'application/json'
+'content-length', '43'
+'server', 'Werkzeug/2.0.3 Python/3.6.8'
+'date', 'Tue, 31 Oct 2023 05:34:48 GMT'
+
+[2023-10-31 05:34:48.580][30][debug][router] [source/common/router/router.cc:1479] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] upstream headers complete: end_stream=false
+[2023-10-31 05:34:48.580][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/filter_manager.cc:1196] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encode headers called: filter=envoy.filters.http.tap.cfx status=0
+[2023-10-31 05:34:48.580][30][debug][http] [source/common/http/conn_manager_impl.cc:1865] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'application/json'
+'content-length', '43'
+'server', 'envoy'
+'date', 'Tue, 31 Oct 2023 05:34:48 GMT'
+'x-envoy-upstream-service-time', '27'
+
+[2023-10-31 05:34:48.580][30][trace][http2] [source/common/http/http2/codec_impl.cc:1319] [Tags: "ConnectionId":"0"] about to send frame type=1, flags=4
+[2023-10-31 05:34:48.580][30][trace][http2] [source/common/http/http2/codec_impl.cc:1342] [Tags: "ConnectionId":"0"] send data: bytes=84
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 84 bytes, end_stream false
+[2023-10-31 05:34:48.580][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=1, stream_id=1, length=75
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:945] [Tags: "ConnectionId":"1"] message complete
+[2023-10-31 05:34:48.580][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/filter_manager.cc:1381] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encode data called: filter=envoy.filters.http.tap.cfx status=0
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/conn_manager_impl.cc:1888] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encoding data via codec (size=43 end_stream=false)
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 52 bytes, end_stream false
+[2023-10-31 05:34:48.580][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=0, stream_id=1, length=43
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:1568] [Tags: "ConnectionId":"1"] message complete
+[2023-10-31 05:34:48.580][30][debug][client] [source/common/http/codec_client.cc:128] [Tags: "ConnectionId":"1"] response complete
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=1)
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=2)
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=3)
+[2023-10-31 05:34:48.580][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf038070 for 300000ms, min is 300000ms
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/filter_manager.cc:1381] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encode data called: filter=envoy.filters.http.tap.cfx status=0
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/conn_manager_impl.cc:1888] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] encoding data via codec (size=0 end_stream=true)
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"0"] writing 9 bytes, end_stream false
+[2023-10-31 05:34:48.580][30][trace][http2] [source/common/http/http2/codec_impl.cc:1212] [Tags: "ConnectionId":"0"] sent frame type=0, stream_id=1, length=0
+[2023-10-31 05:34:48.580][30][debug][http] [source/common/http/conn_manager_impl.cc:1971] [Tags: "ConnectionId":"0","StreamId":"16450760147154472467"] Codec completed encoding stream.
+[2023-10-31 05:34:48.580][30][debug][http2] [source/common/http/http2/codec_impl.cc:1367] [Tags: "ConnectionId":"0"] stream 1 closed: 0
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=4)
+[2023-10-31 05:34:48.580][30][debug][http2] [source/common/http/http2/codec_impl.cc:1430] [Tags: "ConnectionId":"0"] Recouping 0 bytes of flow control window for stream 1.
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=5)
+[2023-10-31 05:34:48.580][30][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x2415bf01f3b0 for 3600000ms, min is 3600000ms
+[2023-10-31 05:34:48.580][30][debug][pool] [source/common/http/http1/conn_pool.cc:53] [Tags: "ConnectionId":"1"] response complete
+[2023-10-31 05:34:48.580][30][debug][pool] [source/common/http/http1/conn_pool.cc:59] [Tags: "ConnectionId":"1"] saw upstream close connection
+[2023-10-31 05:34:48.580][30][debug][connection] [source/common/network/connection_impl.cc:145] [Tags: "ConnectionId":"1"] closing data_to_write=0 type=1
+[2023-10-31 05:34:48.580][30][debug][connection] [source/common/network/connection_impl.cc:278] [Tags: "ConnectionId":"1"] closing socket: 1
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"1"] raising connection event 1
+[2023-10-31 05:34:48.580][30][debug][client] [source/common/http/codec_client.cc:106] [Tags: "ConnectionId":"1"] disconnect. resetting 0 pending requests
+[2023-10-31 05:34:48.580][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:484] [Tags: "ConnectionId":"1"] client disconnected, failure reason: 
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=6)
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=7)
+[2023-10-31 05:34:48.580][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:453] invoking idle callbacks - is_draining_for_deletion_=false
+[2023-10-31 05:34:48.580][30][trace][upstream] [source/common/upstream/cluster_manager_impl.cc:2030] Erasing idle pool for host 127.0.0.1
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=8)
+[2023-10-31 05:34:48.580][30][trace][upstream] [source/common/upstream/cluster_manager_impl.cc:2037] Pool container empty for host 127.0.0.1, erasing host entry
+[2023-10-31 05:34:48.580][30][trace][http] [source/common/http/http1/codec_impl.cc:698] [Tags: "ConnectionId":"1"] parsed 188 bytes
+[2023-10-31 05:34:48.580][30][debug][connection] [source/common/network/connection_impl.cc:714] [Tags: "ConnectionId":"1"] remote close
+[2023-10-31 05:34:48.580][30][trace][main] [source/common/event/dispatcher_impl.cc:124] clearing deferred deletion list (size=8)
+[2023-10-31 05:34:48.580][30][debug][pool] [source/common/conn_pool/conn_pool_base.cc:215] [Tags: "ConnectionId":"1"] destroying stream: 0 remaining
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"0"] socket event: 2
+[2023-10-31 05:34:48.580][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"0"] write ready
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"0"] write returns: 145
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"0"] socket event: 3
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"0"] write ready
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"0"] read ready. dispatch_buffered_data=0
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"0"] read returns: 0
+[2023-10-31 05:34:48.581][30][debug][connection] [source/common/network/connection_impl.cc:714] [Tags: "ConnectionId":"0"] remote close
+[2023-10-31 05:34:48.581][30][debug][connection] [source/common/network/connection_impl.cc:278] [Tags: "ConnectionId":"0"] closing socket: 0
+[2023-10-31 05:34:48.581][30][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"0"] raising connection event 0
+[2023-10-31 05:34:48.581][30][trace][conn_handler] [source/extensions/listener_managers/listener_manager/active_stream_listener_base.cc:125] [Tags: "ConnectionId":"0"] tcp connection on event 0
+[2023-10-31 05:34:48.581][30][debug][conn_handler] [source/extensions/listener_managers/listener_manager/active_stream_listener_base.cc:135] [Tags: "ConnectionId":"0"] adding to cleanup list
+[2023-10-31 05:34:48.581][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=1)
+[2023-10-31 05:34:48.581][30][trace][main] [source/common/event/dispatcher_impl.cc:242] item added to deferred deletion list (size=2)
+[2023-10-31 05:34:48.581][30][trace][main] [source/common/event/dispatcher_impl.cc:124] clearing deferred deletion list (size=2)
+[2023-10-31 05:34:51.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2023-10-31 05:34:51.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2023-10-31 05:34:51.370][22][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2023-10-31 05:34:51.370][22][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2023-10-31 05:34:51.370][22][debug][upstream] [source/common/upstream/upstream_impl.cc:425] transport socket match, socket default selected for host with address 127.0.0.1:9922
+[2023-10-31 05:34:51.370][22][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2023-10-31 05:34:51.628][22][debug][main] [source/server/server.cc:263] flushing stats

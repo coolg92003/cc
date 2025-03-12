@@ -1,0 +1,15 @@
+./h2loadrunner --config-file=h2loadrunner_config_n5_request.json -t 1 -c 400 --rps=15 -D 600
+
+./h2loadrunner --config-file=./h2loadwcg_c.json -t 1 -c 1  --rps=1 -D 1
+#3k
+
+./h2loadrunner --config-file=./h2loadwcg_c.json -t 10 -c 20  --rps=15 -D 60
+
+Notes: t is 1 thread
+c is connections, could be 2
+rps is per connections's request number, it could 1 per second
+D is the durations, 60 is 60 seconds
+./h2loadrunner --config-file=./h2load.json -t 1 -c 1 --rps=1 -D 1
+
+./h2loadrunner --config-file=./h2load.json -t 1 -c 3 --rps=2 -D 2
+

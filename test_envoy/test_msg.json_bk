@@ -1,0 +1,28 @@
+http_buffered_trace {
+  request {
+    headers_received_time {
+      seconds: 1698651339
+      nanos: 475713401
+    }
+  }
+  response {
+    headers_received_time {
+      seconds: 1698651339
+      nanos: 680527764
+    }
+  }
+  downstream_connection {
+    local_address {
+      socket_address {
+        address: "127.0.0.1"
+        port_value: 8022
+      }
+    }
+    remote_address {
+      socket_address {
+        address: "127.0.0.1"
+        port_value: 39332
+      }
+    }
+  }
+}

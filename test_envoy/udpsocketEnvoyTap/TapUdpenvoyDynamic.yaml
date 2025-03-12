@@ -1,0 +1,79 @@
+{
+  "node": {
+    "id": "default_node",
+    "cluster": "default_cluster"
+  },
+  "overload_manager": {
+    "actions": [
+      {
+        "name": "envoy.overload_actions.shrink_heap",
+        "triggers": [
+          {
+            "name": "envoy.resource_monitors.fixed_heap",
+            "threshold": {
+              "value": 0.3
+            }
+          }
+        ]
+      }
+    ],
+    "refresh_interval": "5s",
+    "resource_monitors": [
+      {
+        "name": "envoy.resource_monitors.fixed_heap",
+        "typed_config": {
+          "@type": "type.googleapis.com/envoy.extensions.resource_monitors.fixed_heap.v3.FixedHeapConfig",
+          "max_heap_size_bytes": 2147483648
+        }
+      }
+    ]
+  },
+  "stats_flush_on_admin": true,
+  "admin": {
+    "access_log": {
+      "name": "envoy.access_loggers.file",
+      "typed_config": {
+        "@type": "type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog",
+        "path": "/dev/null"
+      }
+    },
+    "address": {
+      "socket_address": {
+        "protocol": "TCP",
+        "address": "0.0.0.0",
+        "port_value": 9902
+      }
+    }
+  },
+  "dynamic_resources": {
+    "lds_config": {
+      "resource_api_version": "V3",
+      "path_config_source": {
+        "path": "/tmp/test/lds.json",
+        "watched_directory": {
+          "path": "/tmp/test/"
+        }
+      }
+    },
+    "cds_config": {
+      "resource_api_version": "V3",
+      "path_config_source": {
+        "path": "/tmp/test/cds.json",
+        "watched_directory": {
+          "path": "/tmp/test/"
+        }
+      }
+    }
+  },
+  "layered_runtime": {
+    "layers": {
+      "name": "static_layer_0",
+      "static_layer": {
+        "envoy.reloadable_features.defer_processing_backedup_streams": false,
+        "overload": {
+          "global_downstream_max_connections": 524288
+        }
+      }
+    }
+  }
+}

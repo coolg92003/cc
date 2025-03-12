@@ -1,0 +1,65 @@
+{
+  "http_buffered_trace": {
+    "request": {
+      "headers": [
+        {
+          "key": ":method",
+          "value": "GET"
+        },
+        {
+          "key": ":path",
+          "value": "/trace/x-ctidx-1.2.3"
+        },
+        {
+          "key": ":authority",
+          "value": "127.0.0.1:8022"
+        },
+        {
+          "key": "x-nok-trace",
+          "value": "1.2.3"
+        }
+      ],
+      "body": {
+        "as_string": "{\"name\":\"cliff_test body\"}"
+      },
+      "headers_received_time": {
+        "seconds": 1698651339,
+        "nanos": 475713401
+      }
+    },
+    "response": {
+      "headers": [
+        {
+          "key": ":status",
+          "value": "200"
+        },
+        {
+          "key": "server",
+          "value": "envoy"
+        }
+      ],
+      "body": {
+        "as_string": "{\"server\":\"Return_cfx_test_response_body\"}"
+      },
+      "headers_received_time": {
+        "seconds": 1698651339,
+        "nanos": 680527764
+      }
+    },
+    "downstream_connection": {
+      "local_address": {
+        "socket_address": {
+          "address": "127.0.0.1",
+          "port_value": 8022
+        }
+      },
+      "remote_address": {
+        "socket_address": {
+          "address": "127.0.0.1",
+          "port_value": 39332
+        }
+      }
+    }
+  }
+}
+

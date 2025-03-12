@@ -1,0 +1,27 @@
+[req]
+prompt = no
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+
+[req_distinguished_name]
+countryName = CN
+stateOrProvinceName = ShanDong
+localityName = QingDao
+organizationName  = Nokia
+organizationalUnitName  = RD
+commonName = hfed.nokia.com
+emailAddress = cliff.chen@nokia-sbell.com
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = nokia.com
+IP.1 = 127.0.0.1
+IP.2 = ::
+IP.1 = 127.0.0.1
+IP.2 = 192.168.99.1
+IP.3 = 192.168.99.2
+IP.4 = 2600::1

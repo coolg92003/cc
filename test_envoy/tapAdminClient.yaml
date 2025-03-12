@@ -1,0 +1,11 @@
+config_id: test_cfx_config_id
+tap_config:
+  match_config:
+    http_request_headers_match:
+      headers:
+      - name: x-call-trace-id
+        present_match: true
+  output_config:
+    sinks:
+    - format: JSON_BODY_AS_STRING
+      streaming_admin: {}

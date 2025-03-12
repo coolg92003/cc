@@ -1,0 +1,13 @@
+config_id: test_cfx_config_id
+tap_config:
+  match_config:
+    http_request_headers_match:
+      headers:
+      - name: x-call-trace-id
+        present_match: true
+  output_config:
+    sinks:
+    - format: PROTO_BINARY
+      name: custom_sink
+      typed_config:
+        "@type": type.googleapis.cm/google.protobuf.StringValue

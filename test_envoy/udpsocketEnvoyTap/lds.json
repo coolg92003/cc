@@ -1,0 +1,186 @@
+{
+  "version_info": "0",
+  "resources": [
+    {
+      "@type": "type.googleapis.com/envoy.config.listener.v3.Listener",
+      "name": "nrf_ipv4_listener",
+      "address": {
+        "socket_address": {
+          "protocol": "TCP",
+          "address": "0.0.0.0",
+          "port_value": 8022 
+        }
+      },
+      "filter_chains": [
+        {
+          "filters": [
+            {
+              "name": "envoy.filters.network.http_connection_manager",
+              "typed_config": {
+                "@type": "type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager",
+                "stat_prefix": "cfx_stats_udp",
+                "rds": {
+                  "route_config_name": "rds_route",
+                  "config_source": {
+                    "resource_api_version": "V3",
+                    "path_config_source": {
+                      "path": "/tmp/test/rds.json",
+                      "watched_directory": {
+                        "path": "/tmp/test/"
+                      }
+                    }
+                  }
+                },
+                "request_timeout": "15s",
+                "http_filters": [
+                  {
+                    "name": "envoy.filters.http.tap.cfx",
+                    "typed_config": {
+                       "@type": "type.googleapis.com/envoy.extensions.filters.http.tap.v3.Tap",
+                        "common_config": {
+                          "static_config": {
+                            "match_config": {
+                              "http_request_headers_match": {
+                                "headers": [
+                                  {
+                                    "name": "x-call-trace-id",
+                                     "present_match": true
+                                  }
+                                ]
+                             }
+                         },
+                         "output_config": {
+                         "streaming": false,
+                          "sinks": [
+                            {
+                              "format": "JSON_BODY_AS_STRING",
+                              "udp_sink": {
+                                "udp_port": 8080,
+                                "udp_ip_address": "127.0.0.1"
+                              }
+                           }
+                        ],
+                        "max_buffered_rx_bytes": 1000000,
+                        "max_buffered_tx_bytes": 1000000
+                      }
+                    }
+                 },
+                 "record_headers_received_time": true,
+                 "record_downstream_connection": true
+                  }
+                  },
+                  {
+                    "name": "envoy.router",
+                    "typed_config": {
+                      "@type": "type.googleapis.com/envoy.extensions.filters.http.router.v3.Router"
+                    }
+                  }
+                ],
+                "server_header_transformation": "PASS_THROUGH",
+                "local_reply_config": {
+                  "body_format": {
+                    "json_format": {
+                      "cause": "%RESPONSE_CODE_DETAILS%",
+                      "detail": "%RESPONSE_CODE_DETAILS%",
+                      "status": "%RESPONSE_CODE%",
+                      "title": "hfed local reply"
+                    }
+                  },
+                  "mappers": [
+                    {
+                      "body_format_override": {
+                        "json_format": {
+                          "cause": "Service Unavaliable",
+                          "detail": "%RESPONSE_CODE_DETAILS%",
+                          "status": "%RESPONSE_CODE%",
+                          "title": "Service Unavaliable"
+                        }
+                      },
+                      "filter": {
+                        "status_code_filter": {
+                          "comparison": {
+                            "value": {
+                              "default_value": 503,
+                              "runtime_key": "key_b"
+                            }
+                          }
+                        }
+                      },
+                      "headers_to_add": [
+                        {
+                          "append_action": "OVERWRITE_IF_EXISTS_OR_ADD",
+                          "header": {
+                            "key": "server",
+                            "value": "chfed"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "body_format_override": {
+                        "json_format": {
+                          "cause": "Gateway Timeout",
+                          "detail": "%RESPONSE_CODE_DETAILS%",
+                          "status": "%RESPONSE_CODE%",
+                          "title": "Gateway Timeout"
+                        }
+                      },
+                      "filter": {
+                        "status_code_filter": {
+                          "comparison": {
+                            "value": {
+                              "default_value": 504,
+                              "runtime_key": "key_b"
+                            }
+                          }
+                        }
+                      },
+                      "headers_to_add": [
+                        {
+                          "append_action": "OVERWRITE_IF_EXISTS_OR_ADD",
+                          "header": {
+                            "key": "server",
+                            "value": "chfed"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "body_format_override": {
+                        "json_format": {
+                          "cause": "%RESPONSE_CODE_DETAILS%",
+                          "detail": "%RESPONSE_CODE_DETAILS%",
+                          "status": "%RESPONSE_CODE%",
+                          "title": "%RESPONSE_CODE_DETAILS%"
+                        }
+                      },
+                      "filter": {
+                        "status_code_filter": {
+                          "comparison": {
+                            "value": {
+                              "default_value": 404,
+                              "runtime_key": "key_b"
+                            }
+                          }
+                        }
+                      },
+                      "headers_to_add": [
+                        {
+                          "append_action": "OVERWRITE_IF_EXISTS_OR_ADD",
+                          "header": {
+                            "key": "server",
+                            "value": "chfed"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+./dbg/envoy -l debug -c ./TapUdpenvoyStaticTransportHTTP2.yaml --concurrency 2 --log-path ./envoy.log &
+
+/home/cfx/test/udpsocketEnvoyTap
+udpS.py
+udpS8089.py

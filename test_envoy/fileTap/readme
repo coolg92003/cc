@@ -1,0 +1,1 @@
+ ./envoy-contrib  -l trace -c ./TapFileenvoyStaticCustomHttpTrans.yaml --concurrency 1 --log-path ./envoy.log&

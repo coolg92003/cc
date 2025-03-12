@@ -1,0 +1,15 @@
+{
+  "version_info": "0",
+  "resources": [
+    {
+      "@type": "type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.Secret",
+      "name": "sds_cacert",
+      "validation_context": {
+        "trusted_ca": {
+          "filename": "/tmp/CA.cert"
+        },
+        "max_verify_depth": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+[2024-04-08 08:03:11.756][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:11.756][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:11.892][24][debug][main] [source/server/server.cc:239] flushing stats
+[2024-04-08 08:03:16.756][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2024-04-08 08:03:16.756][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2024-04-08 08:03:16.756][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2024-04-08 08:03:16.756][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2024-04-08 08:03:16.756][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:16.756][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:16.892][24][debug][main] [source/server/server.cc:239] flushing stats
+[2024-04-08 08:03:21.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2024-04-08 08:03:21.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2024-04-08 08:03:21.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2024-04-08 08:03:21.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2024-04-08 08:03:21.757][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:21.757][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:21.892][24][debug][main] [source/server/server.cc:239] flushing stats
+[2024-04-08 08:03:26.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2024-04-08 08:03:26.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2024-04-08 08:03:26.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2024-04-08 08:03:26.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2024-04-08 08:03:26.757][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:26.757][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:26.893][24][debug][main] [source/server/server.cc:239] flushing stats
+[2024-04-08 08:03:29.785][32][critical][misc] [source/common/http/conn_manager_impl.cc:174] CFX, ReadFilterCluster, before setidleTimeout():
+[2024-04-08 08:03:29.785][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff0973b0 for 3600000ms, min is 3600000ms
+[2024-04-08 08:03:29.785][32][critical][misc] [source/common/http/conn_manager_impl.cc:180] CFX, ReadFilterCluster, after setidleTimeout():
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"18"] raising connection event 2
+[2024-04-08 08:03:29.785][32][debug][conn_handler] [source/common/listener_manager/active_tcp_listener.cc:158] [Tags: "ConnectionId":"18"] new connection from 127.0.0.1:51312
+[2024-04-08 08:03:29.785][32][trace][misc] [source/common/network/tcp_listener_impl.cc:113] TcpListener accepted 1 new connections.
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"18"] socket event: 3
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"18"] write ready
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"18"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"18"] read returns: 272
+[2024-04-08 08:03:29.785][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"18"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1819] Codec does not have Metadata frame support.
+[2024-04-08 08:03:29.785][32][debug][http2] [source/common/http/http2/codec_impl.cc:1617] [Tags: "ConnectionId":"18"] updating connection-level initial window size to 268435456
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"18"] dispatching 272 bytes
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"18"] about to recv frame type=4, flags=0, stream_id=0
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"18"] track inbound frame type=4 flags=0 length=18 padding_length=0
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"18"] recv frame type=4
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"18"] about to recv frame type=8, flags=0, stream_id=0
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"18"] track inbound frame type=8 flags=0 length=4 padding_length=0
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"18"] recv frame type=8
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"18"] about to recv frame type=1, flags=4, stream_id=1
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"18"] track inbound frame type=1 flags=4 length=164 padding_length=0
+[2024-04-08 08:03:29.785][32][debug][http] [source/common/http/conn_manager_impl.cc:395] [Tags: "ConnectionId":"18"] new stream
+[2024-04-08 08:03:29.785][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:29.785][32][critical][misc] [source/common/http/conn_manager_impl.cc:909] CFX, ConnectionManagerImpl::ActiveStream::onRequestTimeout(),request_timeout=12000, config_.requestTimeout()= 12000
+[2024-04-08 08:03:29.785][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"18"] recv frame type=1
+[2024-04-08 08:03:29.785][32][critical][http] [source/common/http/conn_manager_impl.cc:1197] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFX, ConnectionManagerImpl::ActiveStream::decodeHeaders(), enter, crequest_timeout=12000
+[2024-04-08 08:03:29.785][32][debug][http] [source/common/http/conn_manager_impl.cc:1198] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] request headers complete (end_stream=false):
+':method', 'GET'
+':path', '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+':scheme', 'http'
+':authority', '127.0.0.1:10013'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+
+[2024-04-08 08:03:29.785][32][debug][connection] [./source/common/network/connection_impl.h:97] [Tags: "ConnectionId":"18"] current connecting state: false
+[2024-04-08 08:03:29.785][32][info][router] [source/common/router/router.cc:437] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFXR,stats_.rq_total_.inc()
+[2024-04-08 08:03:29.785][32][warning][router] [source/common/router/router.cc:514] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] cluster 'service1' match for URL '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+[2024-04-08 08:03:29.785][32][warning][router] [source/common/router/router.cc:669] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFXR_router before timeout_=0
+[2024-04-08 08:03:29.785][32][warning][router] [source/common/router/router.cc:673] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFXR_router timeout_=10000
+[2024-04-08 08:03:29.785][32][debug][router] [source/common/router/router.cc:733] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] router decoding headers:
+':method', 'GET'
+':path', '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+':scheme', 'http'
+':authority', '127.0.0.1:10013'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+'x-forwarded-proto', 'http'
+
+[2024-04-08 08:03:29.785][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:285] CFXUP, max_pending_requests stream OK()?
+[2024-04-08 08:03:29.785][32][debug][pool] [source/common/http/conn_pool_base.cc:76] queueing stream due to no available connections (ready=0 busy=0 connecting=0)
+[2024-04-08 08:03:29.785][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:295] trying to create new connection
+[2024-04-08 08:03:29.785][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:296] CFXUP, max_pending_requests stream OK(), Yes
+[2024-04-08 08:03:29.785][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:297] ConnPoolImplBase 0x25dbff0d7e00, ready_clients_.size(): 0, busy_clients_.size(): 0, connecting_clients_.size(): 0, connecting_stream_capacity_: 0, num_active_streams_: 0, pending_streams_.size(): 1 per upstream preconnect ratio: 1
+[2024-04-08 08:03:29.785][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:137] CFXUC, max_connection, current host can_create_connection = true
+[2024-04-08 08:03:29.785][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:147] CFXUC, max_connection, creating a new connection (connecting=0)
+[2024-04-08 08:03:29.785][32][debug][connection] [./source/common/network/connection_impl.h:97] [Tags: "ConnectionId":"19"] current connecting state: true
+[2024-04-08 08:03:29.785][32][debug][client] [source/common/http/codec_client.cc:57] [Tags: "ConnectionId":"19"] connecting
+[2024-04-08 08:03:29.785][32][debug][connection] [source/common/network/connection_impl.cc:1008] [Tags: "ConnectionId":"19"] connecting to 127.0.0.1:8023
+[2024-04-08 08:03:29.785][32][debug][connection] [source/common/network/connection_impl.cc:1028] [Tags: "ConnectionId":"19"] connection in progress
+[2024-04-08 08:03:29.786][32][trace][pool] [source/common/conn_pool/conn_pool_base.cc:131] not creating a new connection, shouldCreateNewConnection returned false.
+[2024-04-08 08:03:29.786][32][trace][http] [source/common/http/filter_manager.cc:600] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] decode headers called: filter=envoy.filters.http.upstream_codec status=4
+[2024-04-08 08:03:29.786][32][trace][http] [source/common/http/filter_manager.cc:600] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] decode headers called: filter=envoy.filters.http.router status=1
+[2024-04-08 08:03:29.786][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"18"] about to recv frame type=0, flags=1, stream_id=1
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"18"] recv frame type=0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"18"] track inbound frame type=0 flags=1 length=26 padding_length=0
+[2024-04-08 08:03:29.786][32][debug][http] [source/common/http/conn_manager_impl.cc:1181] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] request end stream
+[2024-04-08 08:03:29.786][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:29.786][32][critical][router] [source/common/router/router.cc:1036] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFX, Filter::onRequestComplete() enter
+[2024-04-08 08:03:29.786][32][critical][router] [source/common/router/router.cc:1045] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFX,Filter::onRequestComplete(), timeout_.global_timeout_.count <10000>
+[2024-04-08 08:03:29.786][32][critical][router] [source/common/router/router.cc:1049] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] CFX, Filter::onRequestComplete(), 2timeout_.global_timeout_.count <10000>
+[2024-04-08 08:03:29.786][32][trace][http] [source/common/http/filter_manager.cc:732] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] decode data called: filter=envoy.filters.http.router status=3
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"18"] dispatched 272 bytes
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"18"] about to send frame type=4, flags=0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"18"] send data: bytes=33
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 33 bytes, end_stream false
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=4, stream_id=0, length=24
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"18"] about to send frame type=8, flags=0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"18"] send data: bytes=13
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 13 bytes, end_stream false
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=8, stream_id=0, length=4
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"18"] about to send frame type=4, flags=1
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"18"] send data: bytes=9
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 9 bytes, end_stream false
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=4, stream_id=0, length=0
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 2
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:29.786][32][debug][connection] [source/common/network/connection_impl.cc:746] [Tags: "ConnectionId":"19"] connected
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"19"] raising connection event 2
+[2024-04-08 08:03:29.786][32][debug][client] [source/common/http/codec_client.cc:88] [Tags: "ConnectionId":"19"] connected
+[2024-04-08 08:03:29.786][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:333] [Tags: "ConnectionId":"19"] attaching to next stream
+[2024-04-08 08:03:29.786][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:177] [Tags: "ConnectionId":"19"] CFXC, max_requests, Can creating stream?
+[2024-04-08 08:03:29.786][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:185] [Tags: "ConnectionId":"19"] CFX, max_requests, creating stream
+[2024-04-08 08:03:29.786][32][debug][router] [source/common/router/upstream_request.cc:578] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] pool ready
+[2024-04-08 08:03:29.786][32][trace][router] [source/common/router/upstream_codec_filter.cc:61] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] proxying headers
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"19"] writing 313 bytes, end_stream false
+[2024-04-08 08:03:29.786][32][trace][http] [source/common/http/filter_manager.cc:67] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] continuing filter chain: filter=0x25dbff998790
+[2024-04-08 08:03:29.786][32][trace][router] [source/common/router/upstream_codec_filter.cc:93] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] proxying 26 bytes
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"19"] writing 26 bytes, end_stream false
+[2024-04-08 08:03:29.786][32][debug][client] [source/common/http/codec_client.cc:141] [Tags: "ConnectionId":"19"] encode complete
+[2024-04-08 08:03:29.786][32][trace][http] [source/common/http/filter_manager.cc:732] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] decode data called: filter=envoy.filters.http.upstream_codec status=0
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"19"] write returns: 339
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"18"] socket event: 2
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"18"] write ready
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"18"] write returns: 55
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 2
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"18"] socket event: 3
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"18"] write ready
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"18"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"18"] read returns: 9
+[2024-04-08 08:03:29.786][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"18"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"18"] dispatching 9 bytes
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"18"] about to recv frame type=4, flags=1, stream_id=0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"18"] track inbound frame type=4 flags=1 length=0 padding_length=0
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"18"] recv frame type=4
+[2024-04-08 08:03:29.786][32][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"18"] dispatched 9 bytes
+[2024-04-08 08:03:31.050][32][critical][misc] [source/common/http/conn_manager_impl.cc:174] CFX, ReadFilterCluster, before setidleTimeout():
+[2024-04-08 08:03:31.051][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097030 for 3600000ms, min is 3600000ms
+[2024-04-08 08:03:31.051][32][critical][misc] [source/common/http/conn_manager_impl.cc:180] CFX, ReadFilterCluster, after setidleTimeout():
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"20"] raising connection event 2
+[2024-04-08 08:03:31.051][32][debug][conn_handler] [source/common/listener_manager/active_tcp_listener.cc:158] [Tags: "ConnectionId":"20"] new connection from 127.0.0.1:51316
+[2024-04-08 08:03:31.051][32][trace][misc] [source/common/network/tcp_listener_impl.cc:113] TcpListener accepted 1 new connections.
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"20"] socket event: 3
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"20"] write ready
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"20"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"20"] read returns: 272
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"20"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1819] Codec does not have Metadata frame support.
+[2024-04-08 08:03:31.051][32][debug][http2] [source/common/http/http2/codec_impl.cc:1617] [Tags: "ConnectionId":"20"] updating connection-level initial window size to 268435456
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"20"] dispatching 272 bytes
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"20"] about to recv frame type=4, flags=0, stream_id=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"20"] track inbound frame type=4 flags=0 length=18 padding_length=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"20"] recv frame type=4
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"20"] about to recv frame type=8, flags=0, stream_id=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"20"] track inbound frame type=8 flags=0 length=4 padding_length=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"20"] recv frame type=8
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"20"] about to recv frame type=1, flags=4, stream_id=1
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"20"] track inbound frame type=1 flags=4 length=164 padding_length=0
+[2024-04-08 08:03:31.051][32][debug][http] [source/common/http/conn_manager_impl.cc:395] [Tags: "ConnectionId":"20"] new stream
+[2024-04-08 08:03:31.051][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.051][32][critical][misc] [source/common/http/conn_manager_impl.cc:909] CFX, ConnectionManagerImpl::ActiveStream::onRequestTimeout(),request_timeout=12000, config_.requestTimeout()= 12000
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"20"] recv frame type=1
+[2024-04-08 08:03:31.051][32][critical][http] [source/common/http/conn_manager_impl.cc:1197] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFX, ConnectionManagerImpl::ActiveStream::decodeHeaders(), enter, crequest_timeout=12000
+[2024-04-08 08:03:31.051][32][debug][http] [source/common/http/conn_manager_impl.cc:1198] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] request headers complete (end_stream=false):
+':method', 'GET'
+':path', '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+':scheme', 'http'
+':authority', '127.0.0.1:10013'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+
+[2024-04-08 08:03:31.051][32][debug][connection] [./source/common/network/connection_impl.h:97] [Tags: "ConnectionId":"20"] current connecting state: false
+[2024-04-08 08:03:31.051][32][info][router] [source/common/router/router.cc:437] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFXR,stats_.rq_total_.inc()
+[2024-04-08 08:03:31.051][32][warning][router] [source/common/router/router.cc:514] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] cluster 'service1' match for URL '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+[2024-04-08 08:03:31.051][32][warning][router] [source/common/router/router.cc:669] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFXR_router before timeout_=0
+[2024-04-08 08:03:31.051][32][warning][router] [source/common/router/router.cc:673] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFXR_router timeout_=10000
+[2024-04-08 08:03:31.051][32][debug][router] [source/common/router/router.cc:733] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] router decoding headers:
+':method', 'GET'
+':path', '/npcf-policyauthorization/v1/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com'
+':scheme', 'http'
+':authority', '127.0.0.1:10013'
+'user-agent', 'curl/7.61.1'
+'content-type', 'application/json'
+'accept', 'application/json'
+'add-by-cliff', 'content-added-by-cliff'
+'x-call-trace-id', '1'
+'content-length', '26'
+'x-forwarded-proto', 'http'
+
+[2024-04-08 08:03:31.051][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:285] CFXUP, max_pending_requests stream OK()?
+[2024-04-08 08:03:31.051][32][debug][pool] [source/common/http/conn_pool_base.cc:76] queueing stream due to no available connections (ready=0 busy=1 connecting=0)
+[2024-04-08 08:03:31.051][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:295] trying to create new connection
+[2024-04-08 08:03:31.051][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:296] CFXUP, max_pending_requests stream OK(), Yes
+[2024-04-08 08:03:31.051][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:297] ConnPoolImplBase 0x25dbff0d7e00, ready_clients_.size(): 0, busy_clients_.size(): 1, connecting_clients_.size(): 0, connecting_stream_capacity_: 0, num_active_streams_: 1, pending_streams_.size(): 1 per upstream preconnect ratio: 1
+[2024-04-08 08:03:31.051][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:137] CFXUC, max_connection, current host can_create_connection = false
+[2024-04-08 08:03:31.051][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:140] CFXUC, max_connection, upstream_cx_overflow_.inc() now
+[2024-04-08 08:03:31.051][32][trace][pool] [source/common/conn_pool/conn_pool_base.cc:163] CFXUC, max_connection, not creating a new connection: connection constrained
+[2024-04-08 08:03:31.051][32][trace][http] [source/common/http/filter_manager.cc:600] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] decode headers called: filter=envoy.filters.http.upstream_codec status=4
+[2024-04-08 08:03:31.051][32][trace][http] [source/common/http/filter_manager.cc:600] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] decode headers called: filter=envoy.filters.http.router status=1
+[2024-04-08 08:03:31.051][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"20"] about to recv frame type=0, flags=1, stream_id=1
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"20"] recv frame type=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"20"] track inbound frame type=0 flags=1 length=26 padding_length=0
+[2024-04-08 08:03:31.051][32][debug][http] [source/common/http/conn_manager_impl.cc:1181] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] request end stream
+[2024-04-08 08:03:31.051][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.051][32][critical][router] [source/common/router/router.cc:1036] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFX, Filter::onRequestComplete() enter
+[2024-04-08 08:03:31.051][32][critical][router] [source/common/router/router.cc:1045] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFX,Filter::onRequestComplete(), timeout_.global_timeout_.count <10000>
+[2024-04-08 08:03:31.051][32][critical][router] [source/common/router/router.cc:1049] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] CFX, Filter::onRequestComplete(), 2timeout_.global_timeout_.count <10000>
+[2024-04-08 08:03:31.051][32][trace][http] [source/common/http/filter_manager.cc:732] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] decode data called: filter=envoy.filters.http.router status=3
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"20"] dispatched 272 bytes
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"20"] about to send frame type=4, flags=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"20"] send data: bytes=33
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 33 bytes, end_stream false
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=4, stream_id=0, length=24
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"20"] about to send frame type=8, flags=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"20"] send data: bytes=13
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 13 bytes, end_stream false
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=8, stream_id=0, length=4
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"20"] about to send frame type=4, flags=1
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"20"] send data: bytes=9
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 9 bytes, end_stream false
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=4, stream_id=0, length=0
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"20"] socket event: 2
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"20"] write ready
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"20"] write returns: 55
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"20"] socket event: 3
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"20"] write ready
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"20"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"20"] read returns: 9
+[2024-04-08 08:03:31.051][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"20"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:955] [Tags: "ConnectionId":"20"] dispatching 9 bytes
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1061] [Tags: "ConnectionId":"20"] about to recv frame type=4, flags=1, stream_id=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:2149] [Tags: "ConnectionId":"20"] track inbound frame type=4 flags=1 length=0 padding_length=0
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:1088] [Tags: "ConnectionId":"20"] recv frame type=4
+[2024-04-08 08:03:31.051][32][trace][http2] [source/common/http/http2/codec_impl.cc:990] [Tags: "ConnectionId":"20"] dispatched 9 bytes
+[2024-04-08 08:03:31.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2024-04-08 08:03:31.758][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2024-04-08 08:03:31.758][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2024-04-08 08:03:31.758][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2024-04-08 08:03:31.758][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:31.758][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 3
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"19"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"19"] read returns: 168
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"19"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:648] [Tags: "ConnectionId":"19"] parsing 168 bytes
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:590] [Tags: "ConnectionId":"19"] message begin
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Content-Type value=application/json
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Content-Length value=23
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Server value=Werkzeug/2.0.3 Python/3.6.8
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:841] [Tags: "ConnectionId":"19"] onHeadersCompleteImpl
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Date value=Mon, 08 Apr 2024 08:03:31 GMT
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:1486] [Tags: "ConnectionId":"19"] status_code 200
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:1496] [Tags: "ConnectionId":"19"] Client: onHeadersComplete size=4
+[2024-04-08 08:03:31.791][32][trace][router] [source/common/router/upstream_request.cc:261] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] upstream response headers:
+':status', '200'
+'content-type', 'application/json'
+'content-length', '23'
+'server', 'Werkzeug/2.0.3 Python/3.6.8'
+'date', 'Mon, 08 Apr 2024 08:03:31 GMT'
+
+[2024-04-08 08:03:31.791][32][debug][router] [source/common/router/router.cc:1512] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] upstream headers complete: end_stream=false
+[2024-04-08 08:03:31.791][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.791][32][debug][http] [source/common/http/conn_manager_impl.cc:1875] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'application/json'
+'content-length', '23'
+'server', 'envoy'
+'date', 'Mon, 08 Apr 2024 08:03:31 GMT'
+
+[2024-04-08 08:03:31.791][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"18"] about to send frame type=1, flags=4
+[2024-04-08 08:03:31.791][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"18"] send data: bytes=57
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 57 bytes, end_stream false
+[2024-04-08 08:03:31.791][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=1, stream_id=1, length=48
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:945] [Tags: "ConnectionId":"19"] message complete
+[2024-04-08 08:03:31.791][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/conn_manager_impl.cc:1898] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] encoding data via codec (size=23 end_stream=false)
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 32 bytes, end_stream false
+[2024-04-08 08:03:31.791][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=0, stream_id=1, length=23
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:1568] [Tags: "ConnectionId":"19"] message complete
+[2024-04-08 08:03:31.791][32][debug][client] [source/common/http/codec_client.cc:128] [Tags: "ConnectionId":"19"] response complete
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=1)
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=2)
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=3)
+[2024-04-08 08:03:31.791][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097500 for 300000ms, min is 300000ms
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/conn_manager_impl.cc:1898] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] encoding data via codec (size=0 end_stream=true)
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"18"] writing 9 bytes, end_stream false
+[2024-04-08 08:03:31.791][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"18"] sent frame type=0, stream_id=1, length=0
+[2024-04-08 08:03:31.791][32][debug][http] [source/common/http/conn_manager_impl.cc:1981] [Tags: "ConnectionId":"18","StreamId":"11255218157512286044"] Codec completed encoding stream.
+[2024-04-08 08:03:31.791][32][debug][http2] [source/common/http/http2/codec_impl.cc:1363] [Tags: "ConnectionId":"18"] stream 1 closed: 0
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=4)
+[2024-04-08 08:03:31.791][32][debug][http2] [source/common/http/http2/codec_impl.cc:1426] [Tags: "ConnectionId":"18"] Recouping 0 bytes of flow control window for stream 1.
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=5)
+[2024-04-08 08:03:31.791][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff0973b0 for 3600000ms, min is 3600000ms
+[2024-04-08 08:03:31.791][32][debug][pool] [source/common/http/http1/conn_pool.cc:53] [Tags: "ConnectionId":"19"] response complete
+[2024-04-08 08:03:31.791][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:218] [Tags: "ConnectionId":"19"] destroying stream: 0 remaining
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/http1/codec_impl.cc:698] [Tags: "ConnectionId":"19"] parsed 168 bytes
+[2024-04-08 08:03:31.791][32][trace][main] [source/common/event/dispatcher_impl.cc:122] clearing deferred deletion list (size=5)
+[2024-04-08 08:03:31.791][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:333] [Tags: "ConnectionId":"19"] attaching to next stream
+[2024-04-08 08:03:31.791][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:177] [Tags: "ConnectionId":"19"] CFXC, max_requests, Can creating stream?
+[2024-04-08 08:03:31.791][32][critical][pool] [source/common/conn_pool/conn_pool_base.cc:185] [Tags: "ConnectionId":"19"] CFX, max_requests, creating stream
+[2024-04-08 08:03:31.791][32][debug][router] [source/common/router/upstream_request.cc:578] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] pool ready
+[2024-04-08 08:03:31.791][32][trace][router] [source/common/router/upstream_codec_filter.cc:61] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] proxying headers
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"19"] writing 313 bytes, end_stream false
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/filter_manager.cc:67] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] continuing filter chain: filter=0x25dbff9980b0
+[2024-04-08 08:03:31.791][32][trace][router] [source/common/router/upstream_codec_filter.cc:93] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] proxying 26 bytes
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"19"] writing 26 bytes, end_stream false
+[2024-04-08 08:03:31.791][32][debug][client] [source/common/http/codec_client.cc:141] [Tags: "ConnectionId":"19"] encode complete
+[2024-04-08 08:03:31.791][32][trace][http] [source/common/http/filter_manager.cc:732] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] decode data called: filter=envoy.filters.http.upstream_codec status=0
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 2
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"19"] write returns: 339
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"18"] socket event: 2
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"18"] write ready
+[2024-04-08 08:03:31.791][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"18"] write returns: 98
+[2024-04-08 08:03:31.792][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"18"] socket event: 3
+[2024-04-08 08:03:31.792][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"18"] write ready
+[2024-04-08 08:03:31.792][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"18"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:31.792][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"18"] read returns: 0
+[2024-04-08 08:03:31.792][32][debug][connection] [source/common/network/connection_impl.cc:714] [Tags: "ConnectionId":"18"] remote close
+[2024-04-08 08:03:31.792][32][debug][connection] [source/common/network/connection_impl.cc:278] [Tags: "ConnectionId":"18"] closing socket: 0
+[2024-04-08 08:03:31.792][32][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"18"] raising connection event 0
+[2024-04-08 08:03:31.792][32][trace][conn_handler] [source/common/listener_manager/active_stream_listener_base.cc:126] [Tags: "ConnectionId":"18"] tcp connection on event 0
+[2024-04-08 08:03:31.792][32][debug][conn_handler] [source/common/listener_manager/active_stream_listener_base.cc:136] [Tags: "ConnectionId":"18"] adding to cleanup list
+[2024-04-08 08:03:31.792][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=1)
+[2024-04-08 08:03:31.792][32][trace][main] [source/common/event/dispatcher_impl.cc:122] clearing deferred deletion list (size=1)
+[2024-04-08 08:03:31.894][24][debug][main] [source/server/server.cc:239] flushing stats
+[2024-04-08 08:03:33.796][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 3
+[2024-04-08 08:03:33.796][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:33.796][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"19"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:33.796][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"19"] read returns: 17
+[2024-04-08 08:03:33.796][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"19"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:33.796][32][trace][http] [source/common/http/http1/codec_impl.cc:648] [Tags: "ConnectionId":"19"] parsing 17 bytes
+[2024-04-08 08:03:33.796][32][trace][http] [source/common/http/http1/codec_impl.cc:590] [Tags: "ConnectionId":"19"] message begin
+[2024-04-08 08:03:33.796][32][trace][http] [source/common/http/http1/codec_impl.cc:698] [Tags: "ConnectionId":"19"] parsed 17 bytes
+[2024-04-08 08:03:33.836][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"19"] socket event: 3
+[2024-04-08 08:03:33.836][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"19"] write ready
+[2024-04-08 08:03:33.836][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"19"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:33.836][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"19"] read returns: 151
+[2024-04-08 08:03:33.836][32][trace][connection] [source/common/network/raw_buffer_socket.cc:38] [Tags: "ConnectionId":"19"] read error: Resource temporarily unavailable, code: 0
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:648] [Tags: "ConnectionId":"19"] parsing 151 bytes
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Content-Type value=application/json
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Content-Length value=23
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Server value=Werkzeug/2.0.3 Python/3.6.8
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:841] [Tags: "ConnectionId":"19"] onHeadersCompleteImpl
+[2024-04-08 08:03:33.836][32][trace][http] [source/common/http/http1/codec_impl.cc:546] [Tags: "ConnectionId":"19"] completed header: key=Date value=Mon, 08 Apr 2024 08:03:33 GMT
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/http1/codec_impl.cc:1486] [Tags: "ConnectionId":"19"] status_code 200
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/http1/codec_impl.cc:1496] [Tags: "ConnectionId":"19"] Client: onHeadersComplete size=4
+[2024-04-08 08:03:33.837][32][trace][router] [source/common/router/upstream_request.cc:261] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] upstream response headers:
+':status', '200'
+'content-type', 'application/json'
+'content-length', '23'
+'server', 'Werkzeug/2.0.3 Python/3.6.8'
+'date', 'Mon, 08 Apr 2024 08:03:33 GMT'
+
+[2024-04-08 08:03:33.837][32][debug][router] [source/common/router/router.cc:1512] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] upstream headers complete: end_stream=false
+[2024-04-08 08:03:33.837][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:33.837][32][debug][http] [source/common/http/conn_manager_impl.cc:1875] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'application/json'
+'content-length', '23'
+'server', 'envoy'
+'date', 'Mon, 08 Apr 2024 08:03:33 GMT'
+
+[2024-04-08 08:03:33.837][32][trace][http2] [source/common/http/http2/codec_impl.cc:1315] [Tags: "ConnectionId":"20"] about to send frame type=1, flags=4
+[2024-04-08 08:03:33.837][32][trace][http2] [source/common/http/http2/codec_impl.cc:1338] [Tags: "ConnectionId":"20"] send data: bytes=57
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 57 bytes, end_stream false
+[2024-04-08 08:03:33.837][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=1, stream_id=1, length=48
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/http1/codec_impl.cc:945] [Tags: "ConnectionId":"19"] message complete
+[2024-04-08 08:03:33.837][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/conn_manager_impl.cc:1898] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] encoding data via codec (size=23 end_stream=false)
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 32 bytes, end_stream false
+[2024-04-08 08:03:33.837][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=0, stream_id=1, length=23
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/http1/codec_impl.cc:1568] [Tags: "ConnectionId":"19"] message complete
+[2024-04-08 08:03:33.837][32][debug][client] [source/common/http/codec_client.cc:128] [Tags: "ConnectionId":"19"] response complete
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=1)
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=2)
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=3)
+[2024-04-08 08:03:33.837][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff096fc0 for 300000ms, min is 300000ms
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/conn_manager_impl.cc:1898] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] encoding data via codec (size=0 end_stream=true)
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:529] [Tags: "ConnectionId":"20"] writing 9 bytes, end_stream false
+[2024-04-08 08:03:33.837][32][trace][http2] [source/common/http/http2/codec_impl.cc:1208] [Tags: "ConnectionId":"20"] sent frame type=0, stream_id=1, length=0
+[2024-04-08 08:03:33.837][32][debug][http] [source/common/http/conn_manager_impl.cc:1981] [Tags: "ConnectionId":"20","StreamId":"5355442834901437765"] Codec completed encoding stream.
+[2024-04-08 08:03:33.837][32][debug][http2] [source/common/http/http2/codec_impl.cc:1363] [Tags: "ConnectionId":"20"] stream 1 closed: 0
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=4)
+[2024-04-08 08:03:33.837][32][debug][http2] [source/common/http/http2/codec_impl.cc:1426] [Tags: "ConnectionId":"20"] Recouping 0 bytes of flow control window for stream 1.
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=5)
+[2024-04-08 08:03:33.837][32][trace][misc] [source/common/event/scaled_range_timer_manager_impl.cc:59] enableTimer called on 0x25dbff097030 for 3600000ms, min is 3600000ms
+[2024-04-08 08:03:33.837][32][debug][pool] [source/common/http/http1/conn_pool.cc:53] [Tags: "ConnectionId":"19"] response complete
+[2024-04-08 08:03:33.837][32][debug][pool] [source/common/conn_pool/conn_pool_base.cc:218] [Tags: "ConnectionId":"19"] destroying stream: 0 remaining
+[2024-04-08 08:03:33.837][32][trace][http] [source/common/http/http1/codec_impl.cc:698] [Tags: "ConnectionId":"19"] parsed 151 bytes
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:122] clearing deferred deletion list (size=5)
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"20"] socket event: 2
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"20"] write ready
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/raw_buffer_socket.cc:70] [Tags: "ConnectionId":"20"] write returns: 98
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:614] [Tags: "ConnectionId":"20"] socket event: 3
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:737] [Tags: "ConnectionId":"20"] write ready
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:653] [Tags: "ConnectionId":"20"] read ready. dispatch_buffered_data=0
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/raw_buffer_socket.cc:25] [Tags: "ConnectionId":"20"] read returns: 0
+[2024-04-08 08:03:33.837][32][debug][connection] [source/common/network/connection_impl.cc:714] [Tags: "ConnectionId":"20"] remote close
+[2024-04-08 08:03:33.837][32][debug][connection] [source/common/network/connection_impl.cc:278] [Tags: "ConnectionId":"20"] closing socket: 0
+[2024-04-08 08:03:33.837][32][trace][connection] [source/common/network/connection_impl.cc:469] [Tags: "ConnectionId":"20"] raising connection event 0
+[2024-04-08 08:03:33.837][32][trace][conn_handler] [source/common/listener_manager/active_stream_listener_base.cc:126] [Tags: "ConnectionId":"20"] tcp connection on event 0
+[2024-04-08 08:03:33.837][32][debug][conn_handler] [source/common/listener_manager/active_stream_listener_base.cc:136] [Tags: "ConnectionId":"20"] adding to cleanup list
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=1)
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:228] item added to deferred deletion list (size=2)
+[2024-04-08 08:03:33.837][32][trace][main] [source/common/event/dispatcher_impl.cc:122] clearing deferred deletion list (size=2)
+[2024-04-08 08:03:36.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:104] starting async DNS resolution for 127.0.0.1
+[2024-04-08 08:03:36.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:365] dns resolution for 127.0.0.1 started
+[2024-04-08 08:03:36.757][24][debug][dns] [source/extensions/network/dns_resolver/cares/dns_impl.cc:283] dns resolution for 127.0.0.1 completed with status 0
+[2024-04-08 08:03:36.757][24][trace][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:112] async DNS resolution complete for 127.0.0.1
+[2024-04-08 08:03:36.757][24][debug][upstream] [source/common/upstream/upstream_impl.cc:436] transport socket match, socket default selected for host with address 127.0.0.1:8023
+[2024-04-08 08:03:36.757][24][debug][upstream] [source/extensions/clusters/strict_dns/strict_dns_cluster.cc:176] DNS refresh rate reset for 127.0.0.1, refresh rate 5000 ms
+[2024-04-08 08:03:36.895][24][debug][main] [source/server/server.cc:239] flushing stats

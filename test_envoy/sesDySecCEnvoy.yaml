@@ -1,0 +1,104 @@
+node:
+  id: front-envoy
+  cluster: front-proxy
+
+admin:
+  profile_path: /tmp/envoy.prof
+  access_log_path: /tmp/envoy_admin_access1.log
+  address:
+    socket_address:
+       address: 0.0.0.0
+       port_value: 9902
+
+layered_runtime:
+  layers:
+  - name: admin
+    admin_layer: {}
+
+static_resources:
+  listeners:
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 10013
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress_http
+          generate_request_id: false
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "*"
+              routes:
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: service1
+                  timeout: "20s"
+                decorator:
+                  operation: check_server1
+          request_timeout: "12s"
+          generate_request_id: false
+          http_filters:
+          - name: envoy.filters.http.dynamic_forward_proxy
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.dynamic_forward_proxy.v3.FilterConfig
+              dns_cache_config:
+                name: dynamic_forward_proxy_cache_config
+                host_ttl: 7200s
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              suppress_envoy_headers: true
+
+  clusters:
+  - name: service1
+    connect_timeout: "5s"
+    lb_policy: CLUSTER_PROVIDED
+    circuit_breakers:
+      thresholds:
+      - max_requests: 1
+        max_pending_requests: 2
+      per_host_thresholds:
+      - max_connections: 1
+    typed_extension_protocol_options:
+      envoy.extensions.upstreams.http.v3.HttpProtocolOptions:
+        "@type": type.googleapis.com/envoy.extensions.upstreams.http.v3.HttpProtocolOptions
+        explicit_http_config:
+          http_protocol_options: {}
+        common_http_protocol_options:
+          idle_timeout: "20s"
+    cluster_type: 
+      name: envoy.clusters.dynamic_forward_proxy
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.clusters.dynamic_forward_proxy.v3.ClusterConfig
+        dns_cache_config:
+          name: dynamic_forward_proxy_cache_config
+          host_ttl: 7200s
+        allow_insecure_cluster_options: true
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        common_tls_context:
+          tls_params:
+            tls_minimum_protocol_version: "TLSv1_2"
+            tls_maximum_protocol_version: "TLSv1_3"
+          tls_certificate_sds_secret_configs:
+            name: "sds_cert_key"
+            sds_config: 
+              resource_api_version: "V3" 
+              path_config_source:
+                path: "/tmp/sds_cert_key.json"
+          validation_context_sds_secret_config:
+            name: "sds_cacert"
+            sds_config: 
+              resource_api_version: "V3" 
+              path_config_source:
+                path: "/tmp/sds_cacert.json"
+

@@ -1,0 +1,12 @@
+mkdir /tmp/test
+cd /tmp/test
+cp /build/bazel_root/base/execroot/envoy/bazel-out/k8-opt/bin/source/exe/envoy-static .
+
+/tmp/test/envoy-static -l debug -c ./TapUdpenvoyStatic.yaml --concurrency 1 --log-path /tmp/test/envoy.log &
+
+Udp server:
+./udpS.py
+envoy server side
+python3 envoyServer.py
+client
+ curl -vvvS -k -x '' --request GET --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --proxy http://127.0.0.1:8022 http://127.0.0.1:9922/ses
