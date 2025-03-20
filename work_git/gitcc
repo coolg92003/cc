@@ -1,0 +1,82 @@
+OOO – Out of Office
+LGTM – Looks Good To Me (often used in code reviews)
+WIP – Work In Progress
+PR – Pull Request
+MR – Merge Request (used in GitLab, similar to PR in GitHub)
+TL;DR – Too Long; Didn't Read (a summary of a long discussion)
+IMO / IMHO – In My Opinion / In My Humble Opinion
+ACK – Acknowledged
+NACK – Not Acknowledged / Rejected
+TBR – To Be Reviewed
+PTAL – Please Take A Look
+RFC – Request for Comments (used for proposals)
+RTFM – Read The Freaking Manual (or a more polite "Please check the documentation")
+SGTM – Sounds Good To Me
+ICYMI – In Case You Missed It
+IDK – I Don't Know
+IIRC – If I Recall Correctly
+FYA – For Your Awareness
+Code Review & Collaboration
+    TIL – Today I Learned
+    AFAIK – As Far As I Know
+    AFK – Away From Keyboard
+    BRB – Be Right Back
+    WFM – Works For Me
+    YMMV – Your Mileage May Vary (results may differ)
+    NAK – Negative Acknowledgment (opposite of ACK)
+    DNM – Do Not Merge (often used on WIP PRs)
+    FTR – For The Record
+Git & Version Control
+    SHA – Secure Hash Algorithm (often refers to commit hashes)
+    NIT – Nitpick (minor suggestion in code review)
+    SQUASH – Squash commits (combine multiple commits into one)
+    REBASE – Reapply commits on top of another base commit
+    WONTFIX – Will not fix (used for issues/bugs that won't be addressed)
+    BYOB – Bring Your Own Bug (fix it yourself 😆)
+DevOps & CI/CD
+    CI – Continuous Integration
+    CD – Continuous Deployment / Continuous Delivery
+    MTTR – Mean Time To Recovery (how fast issues get fixed)
+    MTBF – Mean Time Between Failures (system reliability metric)
+    EOD – End of Day
+    ETA – Estimated Time of Arrival (when something is expected)
+Issue & Project Management
+    FYI – For Your Information
+    TBA – To Be Announced
+    TBC – To Be Confirmed
+    TBH – To Be Honest
+    OOTB – Out Of The Box (works immediately without modification)
+    POC – Proof of Concept (early prototype)
+    MVP – Minimum Viable Product (basic functional version of a project)
+Debugging & Logs
+    NULL – No value / Empty
+    PITA – Pain In The A** (difficult issue)
+    PEBKAC – Problem Exists Between Keyboard And Chair (user error)
+    ID10T – Idiot error (joke among developers)
+    RTM – Read The Manual
+    EOF – End of File
+	
+General GitHub Slash Commands
+    /test – Triggers tests (commonly used in CI/CD pipelines)
+    /wait – Pauses an action or defers a process
+    /approve – Approves a pull request (if a bot like GitHub Actions or Prow is set up)
+    /lgtm – Marks a PR as "Looks Good To Me" (often used with automation to allow merging)
+    /assign @username – Assigns an issue or PR to a specific user
+    /unassign @username – Unassigns an issue or PR
+    /close – Closes an issue or PR
+    /reopen – Reopens a closed issue or PR
+    /label <label> – Adds a label to an issue or PR
+    /unlabel <label> – Removes a label from an issue or PR
+    /cc @username – Mentions someone explicitly in an issue or PR
+    /milestone <milestone> – Adds an issue/PR to a milestone
+    /remove-milestone – Removes a milestone from an issue/PR
+
+GitHub Actions & Bots (e.g., Prow, GitHub CLI)
+    /retest – Re-runs failed CI tests
+    /hold – Puts a PR on hold (prevents merging)
+    /unhold – Removes the hold status
+    /skip-ci – Skips CI/CD pipeline for the commit/PR
+    /cherry-pick <commit-hash> – Cherry-picks a commit to another branch
+    /merge – Merges a PR (if automated bots are set up)
+    /rebase – Rebases a PR onto the latest main branch
+    /squash – Squashes commits before merging
