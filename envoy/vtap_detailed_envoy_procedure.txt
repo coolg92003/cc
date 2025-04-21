@@ -6,6 +6,7 @@ curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*"
 -------------------------------------news
    
 1) docker run -d -t --net host --name cfx_vtap --privileged ffa1fcac4541 bash
+ docker run -d -t --net host --name cfx_conn_info --privileged ffa1fcac4541 bash
 notes:
 docker images
 REPOSITORY                               TAG         IMAGE ID      CREATED        SIZE
@@ -28,6 +29,7 @@ envoybuild User:
 	cd source
 	git clone  https://github.com/envoyproxy/envoy.git /source
 	git clone  https://github.com/coolg92003/envoy.git /source 
+	git clone --branch v1.33.0 --depth 1 https://github.com/envoyproxy/envoy.git /source
 	git status
 	git config --global user.name "fchen7";	git config --global user.email "cliff.chen@nokia-sbell.com"	
 	git config --get-all --global user.name

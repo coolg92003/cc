@@ -14,7 +14,7 @@ def main():
     server_socket.bind(server_address)
     while True:
         print("Wait for message: ")
-        data, client_address = server_socket.recvfrom(20480)
+        data, client_address = server_socket.recvfrom(30720)
         if data:
             print ("\n\t Got the data: \n")
             str_message = data.decode('utf-8')
