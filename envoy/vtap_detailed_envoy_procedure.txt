@@ -24,6 +24,34 @@ ROOT user in docker:
 	usermod -a -G pcap envoybuild
 	mkdir build;	chown envoybuild:envoygroup /build;	mkdir /source;	chown envoybuild:envoygroup /source
 	
+	vim /etc/profile
+		echo "(^_^)"
+		set -o vi
+		alias ll="ls -altsh"
+	vim /build/.vimrc
+--
+cat /home/cfx/.vimrc
+set t_Co=256
+filetype on
+syntax on
+set ruler
+highlight Comment ctermfg =6 guifg=blue
+hi Type ctermfg =green
+hi Number ctermfg =darkred
+hi Identifier ctermfg =yellow
+hi String ctermfg =darkgreen
+hi Constant ctermfg =yellow
+hi Statement ctermfg =red cterm =bold
+
+map <C-K> :pyf <path-to-this-file>/clang-format.py<cr>
+imap <C-K> <c-o>:pyf <path-to-this-file>/clang-format.py<cr>
+
+" map to <Leader>cf in C++ code
+autocmd FileType h,cc,c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" let g:clang_format#auto_format_on_insert_leave=1      "退出插入模式时自动格式化
+
+--
 envoybuild User:
 3) docker exec -it -u envoybuild  cfx_vtap bash
 	cd source
