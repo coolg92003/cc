@@ -3,6 +3,11 @@ curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*"
 
  -X POST -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/trace
 
+useradd -m -d /home/cfx cfx
+/home/cfx/ubuntu_docker_image/envoy_env_docker_image.tar
+docker save ffa1fcac4541  | gzip -f >envoy_env_docker_image.tar
+gunzip -c envoy_env_docker_image.tar | docker load
+
 -------------------------------------news
    
 1) docker run -d -t --net host --name cfx_vtap --privileged ffa1fcac4541 bash
