@@ -1,0 +1,91 @@
+1)
+git diff -U5 .bazelversion
+diff --git a/examples/.bazelversion b/examples/.bazelversion
+index a3fcc7121..2b0aa2121 100644
+--- a/examples/.bazelversion
++++ b/examples/.bazelversion
+@@ -1 +1 @@
+-7.1.0
++8.2.1
+
+2)
+git diff  -U5 BUILD.bazel
+diff --git a/examples/BUILD.bazel b/examples/BUILD.bazel
+index 7c8276ad0..fc20aea16 100644
+--- a/examples/BUILD.bazel
++++ b/examples/BUILD.bazel
+@@ -55,15 +55,48 @@ cc_binary(
+ cc_binary(
+     name = "list_people_cpp",
+     srcs = ["list_people.cc"],
+     deps = [
+         ":addressbook_cc_proto",
++        "@concurrentqueue//:concurrentqueue",
+         "@com_google_protobuf//:protobuf",
+         "@com_google_protobuf//src/google/protobuf/util:time_util",
+     ],
+ )
++# cfx
++proto_library(
++    name = "trace2_proto",
++    srcs = ["trace2.proto"],
++    deps = ["@com_google_protobuf//:timestamp_proto"],
++)
+
++cc_proto_library(
++    name = "trace2_cc_proto",
++    deps = [":trace2_proto"],
++)
++cc_binary(
++    name = "stream_trace_cpp",
++    srcs = ["udpServerLockFreeOneThreadPerQueueJsonStream.cpp"],
++    deps = [
++        ":trace2_cc_proto",
++        "@concurrentqueue//:concurrentqueue",
++        "@rapidjson//:rapidjson",
++        "@com_google_protobuf//:protobuf",
++        "@com_google_protobuf//src/google/protobuf/util:time_util",
++    ],
++)
++cc_binary(
++    name = "buffer_trace_cpp",
++    srcs = ["udpServerLockFreeOneThreadPerQueueJsonBuffer.cpp"],
++    deps = [
++        ":trace2_cc_proto",
++        "@concurrentqueue//:concurrentqueue",
++        "@rapidjson//:rapidjson",
++        "@com_google_protobuf//:protobuf",
++        "@com_google_protobuf//src/google/protobuf/util:time_util",
++    ],
++)More--
+ # Similar to cc_proto_library but for Java.
+ #
+ # Remote repository "com_google_protobuf_java" must be defined to use this rule.
+ java_proto_library(
+     name = "addressbook_java_proto",
+
+3)
+ git diff -U5 MODULE.bazel
+diff --git a/examples/MODULE.bazel b/examples/MODULE.bazel
+index 137987c79..8e40b243d 100644
+--- a/examples/MODULE.bazel
++++ b/examples/MODULE.bazel
+@@ -17,14 +17,16 @@ local_path_override(
+     module_name = "com_google_protobuf-examples-with-hyphen",
+     path = "examples_with_hyphen",
+ )
+
+ bazel_dep(name = "bazel_skylib", version = "1.7.1")
+-bazel_dep(name = "platforms", version = "0.0.10")
++bazel_dep(name = "platforms", version = "0.0.11")
+ bazel_dep(name = "rules_cc", version = "0.0.17")
+ bazel_dep(name = "rules_java", version = "8.6.1")
+ bazel_dep(name = "rules_pkg", version = "1.0.1")
+ bazel_dep(name = "rules_python", version = "1.0.0")
++bazel_dep(name = "concurrentqueue", version = "1.0.4")
++bazel_dep(name = "rapidjson", version = "1.1.0.bcr.20241007")
+
+ # For clang-cl configuration
+ cc_configure = use_extension("@rules_cc//cc:extensions.bzl", "cc_configure_extension")
+ use_repo(cc_configure, "local_config_cc")
+

@@ -1,0 +1,136 @@
+node:
+  id: front-envoy
+  cluster: front-proxy
+
+admin:
+  profile_path: ./envoy.prof
+  access_log_path: ./testenvoy_admin_access.log
+  address:
+    socket_address:
+       address: 0.0.0.0
+       port_value: 9902
+
+layered_runtime:
+  layers:
+  - name: admin
+    admin_layer: {}
+
+static_resources:
+  listeners:
+  - address:
+      socket_address:
+        protocol: TCP
+        address: 0.0.0.0
+        port_value: 8022
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.ConnectionLimit
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.connection_limit.v3.ConnectionLimit
+          stat_prefix: climit
+          max_connections: 10
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "*"
+              routes:
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: service1
+                decorator:
+                  operation: check_server1
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: extensions.transport_sockets.tap.v3.Tap
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tap.v3.Tap
+          common_config:
+            static_config:
+              match:
+                any_match: true
+              output_config:
+                sinks:
+                - format: PROTO_TEXT
+                  custom_sink:
+                    name: cfx_custom_sink_tudp
+                    typed_config:
+                      "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3alpha.UdpSink
+                      udp_address:
+                        protocol: UDP
+                        address: 127.0.0.1
+                        port_value: 8080
+                max_buffered_rx_bytes: 100000000
+                max_buffered_tx_bytes: 100000000
+                streaming: true
+          transport_socket:
+            name: envoy.transport_sockets.raw_buffer
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.transport_sockets.raw_buffer.v3.RawBuffer
+          socket_tap_config:
+            set_connection_per_event: true
+            pegging_counter: true
+            stats_prefix: "PLDS"
+            sending_tapped_msg_on_configured_size: false
+            min_buffered_bytes: 3072
+  clusters:
+  - name: service1
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: service1
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 8889
+    typed_extension_protocol_options:
+      envoy.extensions.upstreams.http.v3.HttpProtocolOptions:
+        "@type": type.googleapis.com/envoy.extensions.upstreams.http.v3.HttpProtocolOptions
+        explicit_http_config:
+          http2_protocol_options:
+            hpack_table_size: 0
+            max_concurrent_streams: 4096
+    transport_socket:
+      name: extensions.transport_sockets.tap.v3.Tap
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.transport_sockets.tap.v3.Tap
+        common_config:
+          static_config:
+            match:
+              any_match: true
+            output_config:
+              sinks:
+              - format: PROTO_BINARY
+                custom_sink:
+                  name: cfx_custom_sink_tudp
+                  typed_config:
+                    "@type": type.googleapis.com/envoy.extensions.tap_sinks.udp_sink.v3alpha.UdpSink
+                    udp_address:
+                      protocol: UDP
+                      address: 127.0.0.1
+                      port_value: 8089
+              max_buffered_rx_bytes: 100000000
+              max_buffered_tx_bytes: 100000000
+              streaming: false
+        transport_socket:
+          name: envoy.transport_sockets.raw_buffer
+          typed_config:
+            "@type": type.googleapis.com/envoy.extensions.transport_sockets.raw_buffer.v3.RawBuffer
+        socket_tap_config:
+          set_connection_per_event: true
+          pegging_counter: true
+          stats_prefix: "PCDS"
+          sending_tapped_msg_on_configured_size: false
+          min_buffered_bytes: 2048
