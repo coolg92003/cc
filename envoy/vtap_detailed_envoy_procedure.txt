@@ -7,6 +7,8 @@ useradd -m -d /home/cfx cfx
 /home/cfx/ubuntu_docker_image/envoy_env_docker_image.tar
 docker save ffa1fcac4541  | gzip -f >envoy_env_docker_image.tar
 gunzip -c envoy_env_docker_image.tar | docker load
+**if docker image is need to re-dump, then go to /envoy/source, run below command again
+ENVOY_DOCKER_PULL=true IMAGE_NAME=envoyproxy/envoy-build-ubuntu ./ci/run_envoy_docker.sh ./ci/do_ci.sh format
 
 -------------------------------------news
    
@@ -33,6 +35,9 @@ ROOT user in docker:
 		echo "(^_^)"
 		set -o vi
 		alias ll="ls -altsh"
+--
+envoybuild User:
+3) docker exec -it -u envoybuild  cfx_vtap bash
 	vim /build/.vimrc
 --
 cat /home/cfx/.vimrc
@@ -56,9 +61,6 @@ autocmd FileType h,cc,c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<C
 autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " let g:clang_format#auto_format_on_insert_leave=1      "退出插入模式时自动格式化
 
---
-envoybuild User:
-3) docker exec -it -u envoybuild  cfx_vtap bash
 	cd source
 	git clone  https://github.com/envoyproxy/envoy.git /source
 	git clone  https://github.com/coolg92003/envoy.git /source 
@@ -77,6 +79,9 @@ index bde5a0a..9e3c759 100644
 --- a/contrib/exe/BUILD
 +++ b/contrib/exe/BUILD
 @@ -35,6 +35,17 @@ envoy_cc_binary(
+envoy_cc_binary(
+    name = "envoy-static",
+    rbe_pool = "6gig",
      stamped = True,
      visibility = ["//visibility:public"],
      deps = ["//source/exe:envoy_main_entry_lib"] + SELECTED_CONTRIB_EXTENSIONS,
