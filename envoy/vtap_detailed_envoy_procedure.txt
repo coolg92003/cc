@@ -13,6 +13,11 @@ Or undo this operation with:
 	git switch -c origin/n20250521
 	git status
 		On branch origin/n20250521
+	Git docs:
+		https://git-scm.com/docs
+	  zhcc: https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/
+	GitHub for dev:
+		https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class
 
 curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
 
