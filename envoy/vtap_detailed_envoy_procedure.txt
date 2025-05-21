@@ -1,6 +1,18 @@
 
 Study Git
 	https://docs.github.com/en/get-started
+Branch:
+	git pull --rebase
+	git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+  origin/n20250521
+	git checkout origin/n20250521
+Or undo this operation with:
+  git switch -
+	git switch -c origin/n20250521
+	git status
+		On branch origin/n20250521
 
 curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
 
