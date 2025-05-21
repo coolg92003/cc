@@ -1,16 +1,16 @@
 
 Study Git
 	https://docs.github.com/en/get-started
-Branch:
+  Branch:
 	git pull --rebase
 	git branch -r
-  origin/HEAD -> origin/master
-  origin/master
-  origin/n20250521
-	git checkout origin/n20250521
+    origin/HEAD -> origin/master
+    origin/master
+    origin/n20250521
+	git checkout n20250521
 Or undo this operation with:
   git switch -
-	git switch -c origin/n20250521
+	git switch -c n20250521
 	git status
 		On branch origin/n20250521
 	Git docs:
@@ -18,7 +18,39 @@ Or undo this operation with:
 	  zhcc: https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/
 	GitHub for dev:
 		https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class
+Markdown language:
+  https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax	
+	highlight
+		bold   "**bold**" by double **
+		ref   by "> " with an return
+			> original words
+	
+			Your response
+		link
+			write as "[display words](link)" for same PR,or issue, use"#87" to ref
+			[display words](link)
+		code ref  by "``` cfx ```"
+			```
+			#include <iostream>
+			int main() {
+				return 0;
+			}
+			```
+		order list
+			"1. First list item
+			    - First nested list
+			      - Second Nest"
+			1. First list item
+			   - First nested list
+			     - Second Nest
+		Using emojs:
+			1   :+1:    2  :shipit:
 
+		Alert
+			"> [!NOTE]
+			 > Useful information that users should know, even when skimming content."
+			> [!NOTE]
+			> Useful information that users should know, even when skimming content.
 curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
 
  -X POST -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/trace
