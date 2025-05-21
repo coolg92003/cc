@@ -1,4 +1,7 @@
 
+Study Git
+	https://docs.github.com/en/get-started
+
 curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
 
  -X POST -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/trace
