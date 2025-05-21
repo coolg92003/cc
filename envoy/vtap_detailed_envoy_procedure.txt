@@ -2,24 +2,29 @@
 curl -vvv  --proxy https://127.0.0.1:10005  --request GET  --header "Accept:*/*" --header "add-by-cliff:content-added-by-cliff"  http://192.168.99.1:8023/npcf-policyauthorization/v1/rest/p/aog/v1
 
  -X POST -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/trace
+Set up your VM env:
+Add none-root user:
+	useradd -m -d /home/cfx cfx
+prepare image:
+	/home/cfx/ubuntu_docker_image/envoy_env_docker_image.tar
+	Save one image as tar file:
+		docker save ffa1fcac4541  | gzip -f >envoy_env_docker_image.tar
+	load image from a tar file
+	gunzip -c envoy_env_docker_image.tar | docker load
+Notes:
+	**if docker image is need to re-dump, then go to /envoy/source, run below command again
+	ENVOY_DOCKER_PULL=true IMAGE_NAME=envoyproxy/envoy-build-ubuntu ./ci/run_envoy_docker.sh ./ci/do_ci.sh format
 
-useradd -m -d /home/cfx cfx
-/home/cfx/ubuntu_docker_image/envoy_env_docker_image.tar
-docker save ffa1fcac4541  | gzip -f >envoy_env_docker_image.tar
-gunzip -c envoy_env_docker_image.tar | docker load
-**if docker image is need to re-dump, then go to /envoy/source, run below command again
-ENVOY_DOCKER_PULL=true IMAGE_NAME=envoyproxy/envoy-build-ubuntu ./ci/run_envoy_docker.sh ./ci/do_ci.sh format
-
--------------------------------------news
+Bring up the build docker
    
 1) docker run -d -t --net host --name cfx_vtap --privileged ffa1fcac4541 bash
  docker run -d -t --net host --name cfx_conn_info --privileged ffa1fcac4541 bash
 notes:
-docker images
-REPOSITORY                               TAG         IMAGE ID      CREATED        SIZE
-docker.io/envoyproxy/envoy-build-ubuntu  <none>      ffa1fcac4541  10 months ago  5.76 GB
+	docker images
+	REPOSITORY                               TAG         IMAGE ID      CREATED        SIZE
+	docker.io/envoyproxy/envoy-build-ubuntu  <none>      ffa1fcac4541  10 months ago  5.76 GB
 
-ROOT user in docker:
+Update build docker with ROOT user in docker:
 2) docker exec -it -u0 --privileged cfx_vtap bash
 	apt-get update
 	apt-get install iputils-ping -y
@@ -36,9 +41,10 @@ ROOT user in docker:
 		set -o vi
 		alias ll="ls -altsh"
 --
-envoybuild User:
+done build with envoybuild User:
 3) docker exec -it -u envoybuild  cfx_vtap bash
-	vim /build/.vimrc
+3.1) set up vim env
+vim /build/.vimrc
 --
 cat /home/cfx/.vimrc
 set t_Co=256
@@ -61,6 +67,7 @@ autocmd FileType h,cc,c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<C
 autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " let g:clang_format#auto_format_on_insert_leave=1      "退出插入模式时自动格式化
 
+3.2) prepare code env
 	cd source
 	git clone  https://github.com/envoyproxy/envoy.git /source
 	git clone  https://github.com/coolg92003/envoy.git /source 
@@ -72,7 +79,7 @@ autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 	export CLANG_FORMAT=/opt/llvm/bin/clang-format
 	./support/bootstrap
 	./ci/do_ci.sh release.server_only
-	Notes: if you want to build contrib static exe file, then apply below diff
+	Notes: if you want to build contrib Static exe file, then apply below diff
 -------------------
 	contrib/exe/BUILD
 index bde5a0a..9e3c759 100644
@@ -98,16 +105,18 @@ envoy_cc_binary(
 +    ],
  )
  ----------------------------
-4) Release file is under
-   ls -l /build/.cache/envoy-bazel/envoy/x64/bin
+4) build output file
+  ./ci/do_ci.sh release.server_only 
+   	ls -l /build/.cache/envoy-bazel/envoy/x64/bin
 	cd /tmp/test
 	tar --use-compress-program=unzstd -xvf /build/.cache/envoy-bazel/envoy/x64/bin/release.tar.zst
 	chmod 755 ./dbg/envoy
 	./dbg/envoy --version
-	for dev build:
-		./ci/do_ci.sh dev
+
+  ./ci/do_ci.sh dev
 	~/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy
-		./ci/do_ci.sh dev.contrib
+
+  ./ci/do_ci.sh dev.contrib
 	~/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy
 	cp /build/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy .
 	
@@ -125,7 +134,7 @@ curl -vvvS -k -x '' --request GET --header "Accept:application/json" --header "a
 
 	echo SFRUUC8xLjEgMjAwIE9LDQo= | base64 -d
  									
-Try to contribute the code	:
+6) Try to contribute the code	:
 Notes:
 	for Adding an new extension, https://github.com/envoyproxy/envoy/blob/main/api/STYLE.md#adding-an-extension-configuration-to-the-api
 	change file api/BUILD and source/extensions/extensions_build_config.bzl, tools/extensions/extensions_schema.yaml
@@ -133,8 +142,7 @@ Notes:
 	Notes: becareof about file under source/api/envoy/extensions/tap_sinks/udp_sink/v3
 	once there is any error, it will remove files, like BUILD and udp_sink.proto
 	
-6)
-6.1) Create a git hub user
+6.1) Create a github user
 6.2) go to this link (https://github.com/envoyproxy/envoy) to fork envoy
    you can see an "Fork" on right up and click on it
    wait the for ....
