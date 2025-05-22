@@ -1,3 +1,5 @@
+deepwiki:
+	https://deepwiki.com/envoyproxy/envoy
 
 Study Git
 	https://docs.github.com/en/get-started
@@ -124,10 +126,23 @@ autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 	git clone  https://github.com/envoyproxy/envoy.git /source
 	git clone  https://github.com/coolg92003/envoy.git /source 
 	git clone --branch v1.33.0 --depth 1 https://github.com/envoyproxy/envoy.git /source
+		checkout to branch
+			git checkout release/v1.34
+			git branch -r
+			git branch
 	git status
-	git config --global user.name "fchen7";	git config --global user.email "cliff.chen@nokia-sbell.com"	
-	git config --get-all --global user.name
-	git config --get-all --global user.email	
+	git config --global user.name "fchen7";
+	git config --global user.email "cliff.chen@nokia-sbell.com"	
+	or you can reset it by
+		git config --unset --global user.name
+    		git config --unset --global user.email
+	git config --list 
+	git config --system --list
+	git config --global --list
+	git config --local --list
+	  or
+		git config --get-all --global user.name
+		git config --get-all --global user.email	
 	export CLANG_FORMAT=/opt/llvm/bin/clang-format
 	./support/bootstrap
 	./ci/do_ci.sh release.server_only
@@ -256,6 +271,25 @@ Password for 'https://coolg92003@github.com': here put token
 
 ***new*** after continues changes
 1) rebase firstly
+   if There is any changes, it is private, and want to rebase, then try
+	git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+	git stash push -m "private changes for current.yaml"
+	git stash list
+  stash@{0}: On main: private changes for current.yaml
+	git  stash show
+ changelogs/current.yaml | 1 +
+ 1 file changed, 1 insertion(+)
+	git pull --rebase
+ Drop stash by index
+	git stash drop 0
+	
+	git stash
+	git status
+	git log --oneline --decorate
+	git status
+
 	git pull --rebase 
   or
 	branch=$(git status|head -1|cut -f3 -d\ )
@@ -294,19 +328,54 @@ Password for 'https://coolg92003@github.com': here put token
 2) change the files
 3) add
    git add 
+	if you think, you still need change, then you can 
+		git restore --staged changelogs/current.yaml
+	if you want to give up the changes, then try
+		git checkout changelogs/current.yaml
 4) commit
   git commit
+	if you want to check the commit, then try
+		git log --oneline --decorate
+			c51e50da01 (HEAD -> main) new changes of 20250519-2
+			6b8294fd33 (origin/main, origin/HEAD) clean up: remove class 
+	you can see your changes in the first, if you want to give up the commit, then
+		git reset --mixed HEAD~
+	   you can modify it again and add, commit
+        or you don't want to changes any more, then you can do all by
+		git reset --hard 6b8294fd33
+        you can use below command to check full commit history by time order
+		git reflog
+6b8294fd33 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: reset: moving to 6b8294fd33
+ef2942dd5a HEAD@{1}: reset: moving to ef2942dd5a
+ef2942dd5a HEAD@{2}: commit: new changes of 20250519-3
+	just want one commit, try
+		git cherry-pick ef2942dd5a
 5) push
+	Prepare token:
+		Creating a PAT on GitHub.com 
+		Access your account Settings page. (https://github.com/settings/tokens)
+		Click Generate token.
+    		Copy your new PAT, you won't be able to see the token again.
 git push --no-verify
+notes: the command "git push REMOTE-NAME BRANCH-NAME"
+	1) find the remote name as below is "origin"
+		git config --list| grep remote=
+			branch.main.remote=origin
+	2) find the branch as below is "main"
+		git config --list| grep merge=
+			branch.main.merge=refs/heads/main
+therefore,
+	git push origin/main
 
 6) try  /retest  to verify code again!
 -----
 push error
 git pull --rebase
-git add *
-git rebase --continue
-git commit --amend  --no-edit
-git push --no-verify
+	handle any conflicts
+		git add *
+		git rebase --continue
+		git commit --amend  --no-edit
+		git push --no-verify
 
 git diff HEAD^ >conribCodebk.diff12242025
 Build code, and write UT
