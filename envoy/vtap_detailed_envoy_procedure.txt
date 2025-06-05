@@ -95,7 +95,7 @@ Update build docker with ROOT user in docker:
 		set -o vi
 		alias ll="ls -altsh"
 --
-done build with envoybuild User:
+done build with *** envoybuild *** User:
 3) docker exec -it -u envoybuild  cfx_vtap bash
 3.1) set up vim env
 vim /build/.vimrc
@@ -250,6 +250,8 @@ Notes:
 /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/test/extensions/filters/http/tap/tap_filter_integration_test/test.log
 	   4) Build contrib and test
 	   ./ci/do_ci.sh  dev.contrib
+           if not change the BUILD, then envoy is under 
+                   /root/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy
 	   /build/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy
 	   ./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_test
 /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/contrib/tap_sinks/udp_sink/test/udp_sink_test/test.log
