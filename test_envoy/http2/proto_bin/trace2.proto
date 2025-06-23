@@ -142,6 +142,10 @@ message SocketBufferedTrace {
   bool write_truncated = 5;
 }
 
+message SocketEvents {
+  repeated SocketEvent events = 1;
+}
+
 message SocketStreamedTraceSegment {
   //option (udpa.annotations.versioning).previous_message_type =
    //   "envoy.data.tap.v2alpha.SocketStreamedTraceSegment";
@@ -155,6 +159,7 @@ message SocketStreamedTraceSegment {
 
     // Socket event.
     SocketEvent event = 3;
+    SocketEvents events = 4;
   }
 }
 message TraceWrapper {
