@@ -1,6 +1,6 @@
-start timestamp: 2025-04-16 03:26:01
-current time: 2025-04-16 03:26:02
-duration(ms): 1000
+start timestamp: 2025-07-10 02:44:13
+current time: 2025-07-10 02:44:13
+duration(ms): 8
 Request_Data: { 
 scenario index: 0
 request index: 0
@@ -17,7 +17,12 @@ delay_before_executing_next:0
 request header name from template: some, header value:  how
 request header name from template: what, header value:  ever
 updated request header name: content-length, header value: 1091
-response status code:0
-resp_payload:
+response status code:503
+resp_payload:upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused
+response header name: :status, header value: 503
+response header name: content-length, header value: 167
+response header name: content-type, header value: text/plain
+response header name: date, header value: Thu, 10 Jul 2025 02:44:13 GMT
+response header name: server, header value: envoy
 }
 
