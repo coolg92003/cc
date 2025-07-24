@@ -11,6 +11,9 @@ Study Git
     origin/n20250521
 	git checkout n20250521
 Or undo this operation with:
+  git diff
+  git diff -U10 --to include the context line 10
+  git diff --stat -- to give the change line summary
   git switch -
 	git switch -c n20250521
 	git status
@@ -253,8 +256,12 @@ Notes:
            if not change the BUILD, then envoy is under 
                    /root/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy
 	   /build/.cache/envoy-bazel/envoy/x64/source/exe/envoy/envoy
-	   ./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_test
+           Run all tests on test target udp_sink_test:
+	   	./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_test
 /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/contrib/tap_sinks/udp_sink/test/udp_sink_test/test.log
+           Run the single test under test target ssl_tap_integration_test
+                ./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:ssl_tap_integration_test --test_arg=--gtest_filter=*.RequestWithBuffedDownstreamTapPegCounter*
+                Notes: test name, should be suite.testname, so simple way for the specific test is *.*MatchedString*
        cd /source/contrib/tap_sinks/udp_sink/test
 	   cd /source
 	   ./ci/do_ci.sh  dev.contrib  //contrib/tap_sinks/udp_sink/test:udp_sink_interation_test
