@@ -261,6 +261,8 @@ Notes:
 /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/contrib/tap_sinks/udp_sink/test/udp_sink_test/test.log
            Run the single test under test target ssl_tap_integration_test
                 ./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:ssl_tap_integration_test --test_arg=--gtest_filter=*.RequestWithBuffedDownstreamTapPegCounter*
+		./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:tap_config_impl_test --test_arg=--gtest_filter=*.*
+		vim /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/test/extensions/transport_sockets/tap/tap_config_impl_test/test.log
                 Notes: test name, should be suite.testname, so simple way for the specific test is *.*MatchedString*
        cd /source/contrib/tap_sinks/udp_sink/test
 	   cd /source
