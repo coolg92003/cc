@@ -227,6 +227,8 @@ Notes:
 	2) check format
 	Run format check and fix any errors
 	  ./ci/do_ci.sh format
+	  	Note: you can also try below, however, it is slow and do more checkings
+		./ci/run_envoy_docker.sh ci/do_ci.sh clang_tidy
 	  ./ci/do_ci.sh format-api
 
 	3) Build the docs
@@ -235,6 +237,8 @@ Notes:
 	  ./ci/do_ci.sh coverage 
 	 Notes: file is under $ENVOY_DOCKER_BUILD_DIR/envoy/generated/coverage/coverage.html
 	        Leg envoy do this, very wast disk
+		official coverage report
+		https://storage.googleapis.com/envoy-postsubmit/5a08655/coverage/index.html
 	5) build test code:
 	  Write the UT
 	  1) single UT
@@ -261,6 +265,11 @@ Notes:
 /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/contrib/tap_sinks/udp_sink/test/udp_sink_test/test.log
            Run the single test under test target ssl_tap_integration_test
                 ./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:ssl_tap_integration_test --test_arg=--gtest_filter=*.RequestWithBuffedDownstreamTapPegCounter*
+                ./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:ssl_tap_integration_test --test_arg="-l trace"
+			checkmore in: https://github.com/envoyproxy/envoy/blob/main/test/integration/README.md
+                For both name and debug option:
+			./ci/do_ci.sh  dev.contrib  //test/extensions/filters/http/tap:tap_filter_integration_test --test_arg=--gtest_filter=*.*StaticFilePerHttpBufferTraceTapUpstreamConnection* --test_arg=-ltrace
+
 		./ci/do_ci.sh  dev.contrib  //test/extensions/transport_sockets/tap:tap_config_impl_test --test_arg=--gtest_filter=*.*
 		vim /build/.cache/envoy-bazel/bazel_root/base/execroot/envoy/bazel-out/k8-fastbuild/testlogs/test/extensions/transport_sockets/tap/tap_config_impl_test/test.log
                 Notes: test name, should be suite.testname, so simple way for the specific test is *.*MatchedString*
