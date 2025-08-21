@@ -325,10 +325,14 @@ error: Please commit or stash them.
 		1) add an upstream
 			git remote add upstream https://github.com/envoyproxy/envoy.git
 			Notes: this command is only need one time
+			   run command "git config --list" and it will has below info:
+				remote.upstream.url=https://github.com/envoyproxy/envoy.git
+				remote.upstream.fetch=+refs/heads/*:refs/remotes/upstream/*
 		2) fetch it
 			git fetch upstream
 		3) rebase uptream to your main
 			git rebase upstream/main
+                         if there is conflict, then modify it and run " git add changedfiles"
 			then 
 				git commit --amend  --no-edit
 				git push --no-verify
