@@ -74,8 +74,8 @@ Notes:
 
 Bring up the build docker
    
-1) docker run -d -t --net host --name cfx_vtap --privileged ffa1fcac4541 bash
- docker run -d -t --net host --name cfx_conn_info --privileged ffa1fcac4541 bash
+1) docker run -d -t --net host --name cfx_vtap --privileged 6968db1fd22c bash
+ docker run -d -t --net host --name cfx_event --privileged 6968db1fd22c bash
 notes:
 	docker images
 	REPOSITORY                               TAG         IMAGE ID      CREATED        SIZE
@@ -134,8 +134,8 @@ autocmd FileType h,cc,c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 			git branch -r
 			git branch
 	git status
-	git config --global user.name "fchen7";
-	git config --global user.email "cliff.chen@nokia-sbell.com"	
+	git config --global user.name "fchen7"
+	git config --global user.email "cliff.chen@nokia.com"	
 	or you can reset it by
 		git config --unset --global user.name
     		git config --unset --global user.email
