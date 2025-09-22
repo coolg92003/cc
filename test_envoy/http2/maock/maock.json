@@ -2,7 +2,7 @@
   "schema": "http",
   "host": "127.0.0.1",
   "port": 8889,
-  "threads": 4,
+  "threads": 8,
   "max-concurrent-streams": 256,
   "Scenarios": [
     {
@@ -20,7 +20,7 @@
   "-cert-file": "",
   "-caCert-file": "",
   "mTLS": false,
-  "verbose": true,
+  "verbose": false,
   "Service": [
     {
       "Request": {
