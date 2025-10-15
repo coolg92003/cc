@@ -1,0 +1,34 @@
+#help doc: https://github.com/envoyproxy/envoy/issues/23755
+#https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/route/v3/route_components.proto#envoy-v3-api-msg-config-route-v3-directresponseaction
+
+./envoy -l trace --concurrency 1 -c /root/cfx/wcg/envoy/wcg1.1_new.yaml  --log-path /root/cfx/wcg/envoy/wcg1.1.log&
+
+tail -F wcg1.1.log
+
+./envoy -l error --concurrency 1 -c /root/cfx/wcg/envoy/wcg1.1_new.yaml  --log-path /root/cfx/wcg/envoy/wcg1.1.log&
+
+tc qdisc add dev eth19 root netem delay 110ms 10ms
+tc qdisc del dev eth19 root netem
+
+curl -vvvS -k -x '' --request GET -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/wcg 
+
+curl -vvvS -k -x '' --request GET -H "Content-Type:application/json" --header "Accept:application/json" --header "add-by-cliff:content-added-by-cliff" --header "x-call-trace-id:1" --data '{"name":"cliff_test body"}' http://127.0.0.1:8022/npcf-policyauthorization/rest/p/aog/v1/sipuser/999995551234567@prodepdg.tmobile.com/credential?_b64=eyJub25jZSI6IkR0SE5VSXh4SEd2bEF2Y3BDQmlrT3B0NVBjbVY4SW5oIiwKInNpcFVyaVJlYWxtIjoicHJvZGVwZGcudC1tb2JpbGUuY29tIiwic2lwVXJpIjoic2lwOnByb2RlcGRnLnQtbW9iaWxlLmNvbSIsInVlRGlnZXN0IjoiOGMwN2Q5YjFkNmVkMDU1OTA5MTY3ZjE5MTc0YmU2YzUiLCAiY25vbmNlIjoic1kxR1VCTDQiLCAibm9uY2VDb3VudGVyIjoiMDAwMDAwMDEiLCAicW9wIjoiYXV0aCIsICJhbGdvcml0aG0iOiJNRDUiLCAibWV0aG9kIjoiUkVHSVNURVIiLCJvcGFxdWUiOiJ1U01ZZDRlcE84Mm54a3RZeDJOQ3E2WXdNa0tQYVRwbCIsImxvY2F0aW9uIjp7ImNvdW50cnkiOiJVUyJ9fQ==
+
+change log dynamic:
+
+#/bin/envoy -l debug --concurrency 80 --log-path /var/log/container_log_pipe -c /etc/envoy/config/envoy.yaml --restart-epoch 0 --log-format {"type":"log", "time":"%Y-%m-%dT%T.%e%z", "level":"%l", "process":"envoy", "log":{"message":"[%t][%n] %v"}, "extension":{"vm_ip":"192.168.1.105","file_name":"%g","line":"%#"}}
+#
+New:
+1) bring up the http1.1 direct response server
+/home/cfx/tmp/envoy-contrib_mEvent -l info -c ./wcg1.1_new.yaml --base-id 100 --concurrency 1 --log-path ./envoy.log&
+
+2) up envoy LDS http2, CDS http1.1
+/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy -l info -c ./TapUDPLDSL7HTTP2To1String.yaml --concurrency 1 --log-path ./envoy.log&
+
+3) bring up the udp server in 
+/home/cfx/cc/test_envoy/udpsocketEnvoyTap/./udpTCDS8090.py
+4) use h2load send the http request
+/home/cfx/cc/test_envoy/http2/h2load/h2loadrunner --config-file=./h2load.json -t 1 -c 1 --rps=1 -D 1
+
+5) checkoutput in 3) screen
+

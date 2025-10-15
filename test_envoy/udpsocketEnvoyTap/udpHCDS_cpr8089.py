@@ -17,7 +17,7 @@ def main():
     print("Wait for message: ")
     while True:
         # 45K 
-        data, client_address = server_socket.recvfrom(46080)
+        data, client_address = server_socket.recvfrom(57344)
         if data:
             cur_cnt = cur_cnt + 1
             new_inc_cnt = new_inc_cnt + 1
