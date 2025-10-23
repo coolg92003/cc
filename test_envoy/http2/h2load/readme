@@ -11,5 +11,17 @@ rps is per connections's request number, it could 1 per second
 D is the durations, 60 is 60 seconds
 ./h2loadrunner --config-file=./h2load.json -t 1 -c 1 --rps=1 -D 1
 
+add ip as below:
+ip addr add 192.168.91.23/24 dev eth0
+ip addr add 192.168.91.24/24 dev eth0
+fqdn:
+	envoy.ip4.test
+	bringup fqdn server by root: perl /root/DNS/DNSsrv_enum.pl --ip  10.67.77.91 --protocol UDP --prefix 1630 --file /root/DNS/dns_input.53 --whitelist /root/DNS/whitelist.53 --extdnsfile /root/DNS/dns_external.53 --realm nokia.com&
+
+./h2loadrunner --config-file=./h2load9123.json -t 1 -c 1 --rps=1 -D 1
+./h2loadrunner --config-file=./h2loadfqdn.json -t 1 -c 1 --rps=1 -D 1
+./h2loadrunner --config-file=./h2loadfqdn6.json -t 1 -c 1 --rps=1 -D 1
+./h2loadrunner --config-file=./h2loadfqdn46.json -t 1 -c 1 --rps=1 -D 1
+
 ./h2loadrunner --config-file=./h2load.json -t 1 -c 3 --rps=2 -D 2
 
