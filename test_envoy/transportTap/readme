@@ -1,0 +1,3 @@
+/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy  -l info  -c ./TapUdpTranConfigSizeBytes.yaml --concurrency 32  --log-path ./envoy.log&
+
+/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy  -l info  -c ./TapUdpTranNoConfigSizeBytes.yaml --concurrency 32  --log-path ./envoy.log&
