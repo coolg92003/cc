@@ -18,12 +18,18 @@ change log dynamic:
 
 #/bin/envoy -l debug --concurrency 80 --log-path /var/log/container_log_pipe -c /etc/envoy/config/envoy.yaml --restart-epoch 0 --log-format {"type":"log", "time":"%Y-%m-%dT%T.%e%z", "level":"%l", "process":"envoy", "log":{"message":"[%t][%n] %v"}, "extension":{"vm_ip":"192.168.1.105","file_name":"%g","line":"%#"}}
 #
-New:
+New http:
 1) bring up the http1.1 direct response server
 /home/cfx/tmp/envoy-contrib_mEvent -l info -c ./wcg1.1_new.yaml --base-id 100 --concurrency 1 --log-path ./envoy.log&
+/home/cfx/tmp/envoy-contrib_mEvent -l info -c ./wcg1.1_new.yaml --base-id 100 --concurrency 16 --log-path ./envoy.log&
+https:
+/home/cfx/tmp/envoy-contrib_mEvent -l info -c ./wcg1.1_newTlsLDS.yaml --base-id 100 --concurrency 16 --log-path ./envoy.log&
 
 2) up envoy LDS http2, CDS http1.1
-/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy -l info -c ./TapUDPLDSL7HTTP2To1String.yaml --concurrency 1 --log-path ./envoy.log&
+/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy -l info -c ./TapUDPLDSL7HTTP2To1String.yaml --concurrency 16 --log-path ./envoy.log&
+
+https:
+/build/.cache/envoy-bazel/envoy/x64/source/exe/envoy-contrib/envoy -l info -c ./TapUDPLDSL7HTTP2To1StringTLS.yaml --concurrency 16 --log-path ./envoy.log&
 
 3) bring up the udp server in 
 /home/cfx/cc/test_envoy/udpsocketEnvoyTap/./udpTCDS8090.py

@@ -22,6 +22,9 @@ fqdn:
 ./h2loadrunner --config-file=./h2loadfqdn.json -t 1 -c 1 --rps=1 -D 1
 ./h2loadrunner --config-file=./h2loadfqdn6.json -t 1 -c 1 --rps=1 -D 1
 ./h2loadrunner --config-file=./h2loadfqdn46.json -t 1 -c 1 --rps=1 -D 1
+./h2loadrunner --config-file=./h2loadTLS8023.json -t 1 -c 1 --rps=1 -D 1
+SES:
+./h2loadrunner --config-file=./h2loadSESNoBody.json -t 1 -c 1 --rps=1 -D 1
 
 ./h2loadrunner --config-file=./h2load.json -t 1 -c 3 --rps=2 -D 2
 

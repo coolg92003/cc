@@ -6,7 +6,7 @@
       "name": "sds_cacert",
       "validation_context": {
         "trusted_ca": {
-          "filename": "/home/cfx/test/tlss2/CA.cert"
+          "filename": "/home/cfx/cc/test_envoy/tlss2/CA.cert"
         },
         "max_verify_depth": 6
       }

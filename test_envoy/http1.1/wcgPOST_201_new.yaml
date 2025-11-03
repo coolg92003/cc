@@ -37,7 +37,7 @@ static_resources:
               - match:
                   prefix: "/"
                 direct_response:
-                  status: 200
+                  status: 201
                   body:
                     inline_string: "{\"impi\": \"12345678987654321@msg.pc.t-mobile.com\",\"publicIdentity\": \"15557776789@msg.pc.t-mobile.com\", \"expiredDate\": \"1738263668000\",\"sipSecret\":\"some-value1\",\"imsSecret\":\"some-value2\",\"imsi\":\"12345678987654321\",\"msisdn\":\"15557776789\"}"
           http_filters:

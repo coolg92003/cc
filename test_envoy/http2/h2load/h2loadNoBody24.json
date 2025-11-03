@@ -11,11 +11,11 @@
         {
           "uri": {
             "typeOfAction": "input",
-            "input": "http://127.0.0.1:8889/npcf-policyauthorization/v1/app-sessions"
+            "input": "http://192.168.91.24:8889/npcf-policyauthorization/v1/app-sessions"
           },
           "method": "GET",
           "clear-old-cookies": false,
-          "payload": " { \t\"ascReqData\":  \t{ \t\t\"afChargId\": \"PCSF:1-cfed-0-1-0000000063185a10-0000000000014f35\", \t\t\"gpsi\": \"msisdn-user-name\", \t\t\"medComponents\": \t\t{ \t\t\t\"1\": \t\t\t{ \t\t\t\t\"codecs\": [\"downlink\\r\\noffer\\r\\nm=audio 26512 RTP/AVP 8\\r\\n\", \"uplink\\r\\nanswer\\r\\nm=audio 4001 RTP/AVP 8\\r\\n\"], \t\t\t\t\"fStatus\": \"ENABLED\", \t\t\t\t\"marBwDl\": \"128000 bps\", \t\t\t\t\"marBwUl\": \"128000 bps\", \t\t\t\t\"medCompN\": 1, \t\t\t\t\"medSubComps\": \t\t\t\t{ \t\t\t\t\t\"1\": \t\t\t\t\t{ \t\t\t\t\t\t\"fDescs\": [\"permit in 17 from 135.2.207.203 4001 to 135.248.246.57 26512\", \"permit out 17 from 135.248.246.57 26512 to 135.2.207.203 4001\"], \t\t\t\t\t\t\"fNum\": 1 \t\t\t\t\t}, \t\t\t\t\t\"2\": \t\t\t\t\t{ \t\t\t\t\t\t\"fDescs\": [\"permit in 17 from 135.2.207.203 4002 to 135.248.246.57 26513\", \"permit out 17 from 135.248.246.57 26513 to 135.2.207.203 4002\"], \t\t\t\t\t\t\"fNum\": 2, \t\t\t\t\t\t\"flowUsage\": \t\t\t\t\t\t\"RTCP\"}}, \t\t\t\t\t\t\"medType\": \"AUDIO\" \t\t\t\t\t} \t\t\t}, \t\t\t\t\"notifUri\": \"http://127.0.0.1:8089/npcf-policyauthorization/v1/app-sessions/cngss-6677455584-pbwtt/pcsf-test.61965b530b1a0001;117;1;5.377749659.7.68378\", \t\t\t\t\"servInfStatus\": \"FINAL\", \t\t\t\t\"suppFeat\": \"10\", \t\t\t\t\"ueIpv4\": \"192.168.90.167\" \t\t} }",
+          "payload": "",
           "additonalHeaders": [
           ],
           "expected-status-code": 0,

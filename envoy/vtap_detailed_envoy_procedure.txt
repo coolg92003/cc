@@ -93,10 +93,12 @@ Update build docker with ROOT user in docker:
 	usermod -a -G pcap envoybuild
 	mkdir build;	chown envoybuild:envoygroup /build;	mkdir /source;	chown envoybuild:envoygroup /source
 	
-	vim /etc/profile
-		echo "(^_^)"
-		set -o vi
-		alias ll="ls -altsh"
+vim /etc/profile
+echo "(^_^)"
+set -o vi
+alias ll="ls -altsh"
+echo "Done"
+echo 
 --
 done build with *** envoybuild *** User:
 3) docker exec -it -u envoybuild  cfx_vtap bash

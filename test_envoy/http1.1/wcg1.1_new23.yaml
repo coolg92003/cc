@@ -8,7 +8,7 @@ admin:
   address:
     socket_address:
        address: 0.0.0.0
-       port_value: 9905
+       port_value: 9903
 
 layered_runtime:
   layers:
@@ -19,7 +19,7 @@ static_resources:
   listeners:
   - address:
       socket_address:
-        address: 0.0.0.0
+        address: 192.168.91.23
         port_value: 8889
     filter_chains:
     - filters:

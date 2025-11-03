@@ -19,7 +19,7 @@ static_resources:
   listeners:
   - address:
       socket_address:
-        address: 0.0.0.0
+        address: 192.168.91.24
         port_value: 8889
     filter_chains:
     - filters:

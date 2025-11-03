@@ -20,7 +20,7 @@ static_resources:
   - address:
       socket_address:
         address: 0.0.0.0
-        port_value: 8889
+        port_value: 9009
     filter_chains:
     - filters:
       - name: envoy.filters.network.http_connection_manager
@@ -44,6 +44,29 @@ static_resources:
           - name: envoy.filters.http.router
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_params:
+              tls_minimum_protocol_version: "TLSv1_3"
+              tls_maximum_protocol_version: "TLSv1_3"
+            tls_certificate_sds_secret_configs:
+              name: sds_cert_key
+              sds_config:
+                resource_api_version: "V3"
+                path_config_source:
+                  path: /home/cfx/cc/test_envoy/tlss2/sds_cert_key.json
+            combined_validation_context:
+              default_validation_context:
+                max_verify_depth: 100
+              validation_context_sds_secret_config:
+                name: sds_cacert
+                sds_config:
+                  resource_api_version: "V3"
+                  path_config_source:
+                    path: /home/cfx/cc/test_envoy/tlss2/sds_cacert.json
 
   clusters:
   - name: service1
