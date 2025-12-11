@@ -71,6 +71,10 @@ prepare image:
 Notes:
 	**if docker image is need to re-dump, then go to /envoy/source, run below command again
 	ENVOY_DOCKER_PULL=true IMAGE_NAME=envoyproxy/envoy-build-ubuntu ./ci/run_envoy_docker.sh ./ci/do_ci.sh format
+        ** new way 
+        got to https://hub.docker.com/r/envoyproxy/envoy-build-ubuntu
+	Copy the similiar command as below to pull image
+            docker pull envoyproxy/envoy-build-ubuntu:e2420cc813171c6aad9aa0d62b0544b68bc6504d
 
 Bring up the build docker
    
