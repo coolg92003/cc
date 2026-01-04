@@ -1,0 +1,3 @@
+# Ignore the log file
+test_envoy/http1.1/*.log
+test_envoy/http2/*.log

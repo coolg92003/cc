@@ -1,28 +1,6 @@
 deepwiki:
 	https://deepwiki.com/envoyproxy/envoy
 
-Study Git
-	https://docs.github.com/en/get-started
-  Branch:
-	git pull --rebase
-	git branch -r
-    origin/HEAD -> origin/master
-    origin/master
-    origin/n20250521
-	git checkout n20250521
-Or undo this operation with:
-  git diff
-  git diff -U10 --to include the context line 10
-  git diff --stat -- to give the change line summary
-  git switch -
-	git switch -c n20250521
-	git status
-		On branch origin/n20250521
-	Git docs:
-		https://git-scm.com/docs
-	  zhcc: https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/
-	GitHub for dev:
-		https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class
 Markdown language:
   https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax	
 	highlight
@@ -356,22 +334,59 @@ error: Please commit or stash them.
 		find your commit words or username
 	
 2) change the files
+ Study Git
+	https://docs.github.com/en/get-started
+	Git docs:
+		https://git-scm.com/docs
+	  zhcc: https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/
+	GitHub for dev:
+		https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class
+  Branch:
+	git pull --rebase
+	git branch -r
+    origin/HEAD -> origin/master
+    origin/master
+    origin/n20250521
+	git checkout n20250521
+ Or undo this operation with:
+  git diff
+  git diff -U10 --to include the context line 10
+  git diff --stat -- to give the change line summary
+  git switch -
+	git switch -c n20250521
+	git status
+		On branch origin/n20250521
+    Notes:
+    1) always do "git pull --rebase" before doing code changes to avoid the code conflict
+    2) Restored changed files:
+	if you want to give up all changes, then try below command
+	git checkout -- *   to give up all files changes, or single file
+	git checkout a.c
 3) add
    git add 
-	if you think, you still need change, then you can 
+     Give up "git add"
+	if you think, you want to give up "git add", then you can 
 		git restore --staged changelogs/current.yaml
-	if you want to give up the changes, then try
-		git checkout changelogs/current.yaml
 4) commit
   git commit
 	if you want to check the commit, then try
+          show the content changes after committing
+		git show
+          The first commit
+		git log -1
+          The single file commmit history
+               git log --follow cp/ced/a.py		
+          The single line mode
 		git log --oneline --decorate
 			c51e50da01 (HEAD -> main) new changes of 20250519-2
 			6b8294fd33 (origin/main, origin/HEAD) clean up: remove class 
-	you can see your changes in the first, if you want to give up the commit, then
-		git reset --mixed HEAD~
-	   you can modify it again and add, commit
+	  if you want to only give up commit
+		git reset --soft HEAD~1
+	  if you want to only give up commit and add
+		git reset --mixed HEAD~1
         or you don't want to changes any more, then you can do all by
+                git log --oneline -2
+		git reset --hard HEAD~1
 		git reset --hard 6b8294fd33
         you can use below command to check full commit history by time order
 		git reflog
