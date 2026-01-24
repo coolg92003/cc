@@ -1,0 +1,106 @@
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 10000
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress_http
+          codec_type: AUTO
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains: ["*"]
+              routes:
+              # Route with retry policy for RST_STREAM scenarios
+              - match:
+                  prefix: "/api"
+                route:
+                  cluster: upstream_cluster
+                  # ==========================================
+                  # RETRY POLICY CONFIGURATION
+                  # ==========================================
+                  retry_policy:
+                    # Retry on these conditions
+                    retry_on: "5xx,refused-stream,reset,connect-failure"
+                    # Maximum number of retries
+                    num_retries: 3
+                    # Timeout for each retry attempt
+                    per_try_timeout: 2s
+                    # Optional: Exponential backoff configuration
+                    retry_back_off:
+                      base_interval: 0.1s
+                      max_interval: 1s
+                    # Optional: Retry on specific status codes sent by remote Server
+                    retriable_status_codes: [503, 504]
+                    # Optional: Retry budget to prevent retry storms
+                    retry_host_predicate:
+                    - name: envoy.retry_host_predicates.previous_hosts
+                      typed_config:
+                        "@type": type.googleapis.com/envoy.extensions.retry.host.previous_hosts.v3.PreviousHostsPredicate
+                    host_selection_retry_max_attempts: 5
+
+              # Another route with different retry strategy
+              - match:
+                  prefix: "/critical"
+                route:
+                  cluster: upstream_cluster
+                  retry_policy:
+                    # Only retry on connection failures and refused streams
+                    retry_on: "connect-failure,refused-stream"
+                    num_retries: 5
+                    per_try_timeout: 1s
+
+              # Route without retry (fail fast)
+              - match:
+                  prefix: "/no-retry"
+                route:
+                  cluster: upstream_cluster
+                  # No retry_policy - fails immediately
+
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+              # Disable x-envoy header generation in router filter for HTTP/2
+              suppress_envoy_headers: true
+
+  clusters:
+  - name: upstream_cluster
+    type: STRICT_DNS
+    connect_timeout: 5s
+    lb_policy: ROUND_ROBIN
+    # HTTP/2 upstream configuration
+    typed_extension_protocol_options:
+      envoy.extensions.upstreams.http.v3.HttpProtocolOptions:
+        "@type": type.googleapis.com/envoy.extensions.upstreams.http.v3.HttpProtocolOptions
+        explicit_http_config:
+          http2_protocol_options:
+            max_concurrent_streams: 100
+    load_assignment:
+      cluster_name: upstream_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: upstream.example.com
+                port_value: 443
+    # TLS configuration for HTTPS
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        sni: upstream.example.com
+
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 9901

@@ -1,0 +1,13 @@
+
+1) h2load send http2 GET and CDS convert it into http1.1 request
+	configure http tap filter before forward filter
+        configure is h2loadSESNoBody200GET.json
+  ./h2loadrunner --config-file=./h2loadSESNoBody200GET.json -t 1 -c 1 --rps=1 -D 1
+2) envoy (configuration in ../http1.1 dir) send back http1.1 response
+	2.1) Real tested envoy
+		config: ./wcgvTap/TapDfpDnsCacheUDPLDSL7HTTP2To1Str.yaml
+		./envoy -l info --concurrency 16 -c ./TapDfpDnsCacheUDPLDSL7HTTP2To1Str.yaml  --log-path ./envoy.log&
+        2.2) envoy http1.1 server
+		./envoy_cfx_134 -l info --concurrency 16 --base-id 100 -c ./wcgGET_200_new.yaml  --log-path ./wcg1.1.log&
+3) tap message in udp server sent by udp sink client
+		./udpsocketEnvoyTap/udpTCDS8089.py &
